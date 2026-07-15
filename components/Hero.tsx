@@ -52,31 +52,14 @@ const Hero = () => {
               transition={{ delay: 0.3 }}
               className="mb-8"
             >
-              <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-white leading-[0.85] mb-4">
-                <motion.span
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.5, duration: 0.8 }}
-                  className="block"
-                >
-                  Abdul
-                </motion.span>
-                <motion.span
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.7, duration: 0.8 }}
-                  className="block text-violet-500"
-                >
-                  Mannan
-                </motion.span>
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.9, duration: 0.8 }}
-                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-gray-300 mt-4"
-                >
-                  Electrical Engineer
-                </motion.div>
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-[0.9] mb-4">
+                I&apos;m Abdul
+                <br />
+                <span className="text-violet-500">Mannan</span>
+                <br />
+                Electrical
+                <br />
+                <span className="text-violet-500">Engineer.</span>
               </h1>
             </motion.div>
 
@@ -84,65 +67,44 @@ const Hero = () => {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.1 }}
-              className="text-gray-400 text-xl leading-relaxed mb-10 max-w-2xl"
+              transition={{ delay: 0.5 }}
+              className="text-gray-400 text-lg leading-relaxed mb-8 max-w-xl"
             >
-              <motion.span
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.3, duration: 1 }}
-              >
-                Electrical engineering student specializing in circuit design, Arduino projects, 
-                and Python applications. Creating innovative hardware and software solutions 
-                for real-world challenges.
-              </motion.span>
+              I&apos;m Abdul Mannan, an electrical engineering student. I design circuits, build Arduino projects, and develop Python applications — plus the hardware and software solutions around them.
             </motion.p>
 
             {/* CTA Button */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.5 }}
-              className="flex items-center gap-6 mb-12"
+              transition={{ delay: 0.6 }}
+              className="flex items-center gap-4"
             >
               <motion.a
                 href="#projects"
-                className="group px-10 py-5 bg-violet-500 hover:bg-violet-600 text-black font-bold rounded-full transition-all flex items-center gap-3 text-lg"
-                whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(139, 92, 246, 0.5)" }}
+                className="group px-8 py-4 bg-violet-500 hover:bg-violet-600 text-black font-semibold rounded-full transition-all flex items-center gap-2"
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <motion.span
-                  animate={{ rotate: [0, 360] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                >
-                  ⚡
-                </motion.span>
-                View Projects
+                <span>▶</span>
+                See how it works
               </motion.a>
 
               {/* Social Icons */}
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3">
                 {[
-                  { icon: FaGithub, href: 'https://github.com', label: 'GitHub' },
-                  { icon: FaLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-                  { icon: FaEnvelope, href: '#contact', label: 'Email' },
+                  { icon: FaGithub, href: 'https://github.com' },
+                  { icon: FaLinkedin, href: 'https://linkedin.com' },
+                  { icon: FaEnvelope, href: '#contact' },
                 ].map((social, index) => (
                   <motion.a
                     key={index}
                     href={social.href}
-                    className="w-14 h-14 flex items-center justify-center rounded-full bg-white/5 hover:bg-violet-500/20 text-gray-400 hover:text-violet-400 transition-all border border-white/10 hover:border-violet-500/50"
-                    whileHover={{ 
-                      scale: 1.1, 
-                      y: -5,
-                      boxShadow: "0 10px 25px rgba(139, 92, 246, 0.3)" 
-                    }}
+                    className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition-all"
+                    whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.9 }}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.7 + index * 0.1 }}
-                    title={social.label}
                   >
-                    <social.icon size={20} />
+                    <social.icon size={18} />
                   </motion.a>
                 ))}
               </div>
@@ -152,37 +114,24 @@ const Hero = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 2 }}
-              className="text-gray-500 text-lg font-mono"
+              transition={{ delay: 0.8 }}
+              className="mt-12 text-gray-500 text-sm font-mono"
             >
-              <motion.div
-                animate={{ 
-                  opacity: [0.5, 1, 0.5],
-                  scale: [1, 1.02, 1]
-                }}
-                transition={{ 
-                  duration: 2, 
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                <TypeAnimation
-                  sequence={[
-                    'Circuit Analysis Expert',
-                    2000,
-                    'Arduino Developer', 
-                    2000,
-                    'Python Programmer',
-                    2000,
-                    'Innovation Engineer',
-                    2000,
-                  ]}
-                  wrapper="span"
-                  speed={50}
-                  repeat={Infinity}
-                  style={{ fontSize: '1.1em' }}
-                />
-              </motion.div>
+              <TypeAnimation
+                sequence={[
+                  'Circuit Analysis Enthusiast',
+                  2000,
+                  'Electronics Explorer',
+                  2000,
+                  'Python Developer',
+                  2000,
+                  'Lifelong Learner',
+                  2000,
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+              />
             </motion.div>
           </motion.div>
 
