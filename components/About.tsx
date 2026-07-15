@@ -64,7 +64,7 @@ const About = () => {
 
             <div className="space-y-6 text-gray-400 leading-relaxed">
               <p>
-                I'm an Electrical Engineering student with a deep passion for circuit analysis, 
+                I&apos;m an Electrical Engineering student with a deep passion for circuit analysis, 
                 electronics exploration, and practical problem-solving. As a prompt engineer and 
                 lifelong learner, I continuously seek to expand my knowledge and apply it to 
                 real-world challenges.

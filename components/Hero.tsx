@@ -64,7 +64,7 @@ const Hero = () => {
               transition={{ delay: 0.5 }}
               className="text-gray-400 text-lg leading-relaxed mb-8 max-w-xl"
             >
-              I'm Abdul Mannan, an electrical engineering student. I design circuits, build Arduino projects, and develop Python applications — plus the hardware and software solutions around them.
+              I&apos;m Abdul Mannan, an electrical engineering student. I design circuits, build Arduino projects, and develop Python applications — plus the hardware and software solutions around them.
             </motion.p>
 
             {/* CTA Button */}
@@ -129,117 +129,225 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right Content - Dashboard Preview */}
+          {/* Right Content - Animated Network Visualization */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative"
           >
-            {/* Dashboard Card */}
-            <div className="bg-[#111] border border-white/5 rounded-2xl overflow-hidden shadow-2xl">
-              {/* Header */}
-              <div className="border-b border-white/5 p-4 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                </div>
-                <span className="text-gray-500 text-xs font-mono">Project Dashboard — Live stats and recent work</span>
-              </div>
+            {/* Network Container */}
+            <div className="relative w-full max-w-lg h-96 flex items-center justify-center">
+              {/* Animated SVG Network */}
+              <svg
+                className="absolute inset-0 w-full h-full"
+                viewBox="0 0 400 400"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                {/* Connecting Lines */}
+                {[
+                  { x1: 200, y1: 50, x2: 320, y2: 150 },
+                  { x1: 200, y1: 50, x2: 80, y2: 150 },
+                  { x1: 320, y1: 150, x2: 300, y2: 280 },
+                  { x1: 80, y1: 150, x2: 100, y2: 280 },
+                  { x1: 300, y1: 280, x2: 100, y2: 280 },
+                  { x1: 200, y1: 200, x2: 320, y2: 150 },
+                  { x1: 200, y1: 200, x2: 80, y2: 150 },
+                  { x1: 200, y1: 200, x2: 300, y2: 280 },
+                  { x1: 200, y1: 200, x2: 100, y2: 280 },
+                ].map((line, index) => (
+                  <motion.line
+                    key={index}
+                    x1={line.x1}
+                    y1={line.y1}
+                    x2={line.x2}
+                    y2={line.y2}
+                    stroke="url(#gradient)"
+                    strokeWidth="1"
+                    strokeOpacity="0.3"
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    transition={{
+                      duration: 2,
+                      delay: 0.5 + index * 0.1,
+                      ease: "easeInOut"
+                    }}
+                  />
+                ))}
 
-              {/* Content */}
-              <div className="p-6">
-                {/* Stats */}
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div>
-                    <div className="text-gray-500 text-xs mb-1">Projects</div>
-                    <div className="text-3xl font-bold text-white">25+</div>
-                  </div>
-                  <div>
-                    <div className="text-gray-500 text-xs mb-1">Success Rate</div>
-                    <div className="text-3xl font-bold text-violet-500">98.4%</div>
-                  </div>
-                </div>
+                {/* Gradient Definition */}
+                <defs>
+                  <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.8" />
+                    <stop offset="100%" stopColor="#A855F7" stopOpacity="0.2" />
+                  </linearGradient>
+                  <filter id="glow">
+                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                    <feMerge> 
+                      <feMergeNode in="coloredBlur"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                </defs>
 
-                {/* Progress Bars */}
-                <div className="space-y-3 mb-6">
-                  {[
-                    { label: 'Arduino Projects', value: 90 },
-                    { label: 'Circuit Design', value: 85 },
-                    { label: 'Python Apps', value: 80 },
-                  ].map((skill, index) => (
-                    <div key={index}>
-                      <div className="flex justify-between text-xs text-gray-500 mb-1">
-                        <span>{skill.label}</span>
-                        <span>{skill.value}%</span>
-                      </div>
-                      <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
-                        <motion.div
-                          className="h-full bg-violet-500"
-                          initial={{ width: 0 }}
-                          animate={{ width: `${skill.value}%` }}
-                          transition={{ duration: 1, delay: 1 + index * 0.2 }}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Recent Activity */}
-                <div className="space-y-2">
-                  <div className="text-gray-500 text-xs mb-2">► Recent Activity</div>
-                  {[
-                    'Bluetooth Smart Car',
-                    'LDR Lighting System',
-                    'Python Desktop App',
-                  ].map((activity, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 1.5 + index * 0.1 }}
-                      className="flex items-center gap-2 text-sm"
-                    >
-                      <div className="w-1.5 h-1.5 rounded-full bg-violet-500"></div>
-                      <span className="text-gray-400">{activity}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Footer Stats */}
-              <div className="border-t border-white/5 p-4 flex items-center justify-between">
-                <div>
-                  <div className="text-2xl font-bold text-white">1,284</div>
-                  <div className="text-xs text-gray-500">hours this week</div>
-                </div>
-                <div className="flex gap-1">
-                  {[60, 40, 80, 45, 90, 55, 75].map((height, index) => (
-                    <motion.div
-                      key={index}
-                      className="w-2 bg-violet-500 rounded-t"
-                      style={{ height: `${height}%` }}
-                      initial={{ height: 0 }}
-                      animate={{ height: `${height}%` }}
-                      transition={{ duration: 0.5, delay: 1.8 + index * 0.1 }}
+                {/* Network Nodes */}
+                {[
+                  { x: 200, y: 50, size: 8, label: 'Arduino' },
+                  { x: 320, y: 150, size: 6, label: 'Sensors' },
+                  { x: 80, y: 150, size: 6, label: 'Actuators' },
+                  { x: 200, y: 200, size: 10, label: 'MCU' },
+                  { x: 300, y: 280, size: 5, label: 'Output' },
+                  { x: 100, y: 280, size: 5, label: 'Input' },
+                ].map((node, index) => (
+                  <g key={index}>
+                    {/* Node Pulse Animation */}
+                    <motion.circle
+                      cx={node.x}
+                      cy={node.y}
+                      r={node.size + 4}
+                      fill="none"
+                      stroke="#8B5CF6"
+                      strokeWidth="1"
+                      strokeOpacity="0.4"
+                      initial={{ scale: 0 }}
+                      animate={{ scale: [1, 1.5, 1] }}
+                      transition={{
+                        duration: 2,
+                        delay: 1 + index * 0.2,
+                        repeat: Infinity,
+                        repeatType: "reverse",
+                        ease: "easeInOut"
+                      }}
                     />
-                  ))}
-                </div>
-              </div>
+                    {/* Main Node */}
+                    <motion.circle
+                      cx={node.x}
+                      cy={node.y}
+                      r={node.size}
+                      fill="#8B5CF6"
+                      filter="url(#glow)"
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{
+                        duration: 0.5,
+                        delay: 0.8 + index * 0.1,
+                        type: "spring",
+                        stiffness: 200
+                      }}
+                    />
+                  </g>
+                ))}
+
+                {/* Floating Particles */}
+                {Array.from({ length: 8 }).map((_, index) => (
+                  <motion.circle
+                    key={`particle-${index}`}
+                    cx={50 + (index * 40)}
+                    cy={350}
+                    r="1"
+                    fill="#8B5CF6"
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      opacity: [0, 0.6, 0],
+                      y: [350, 50, 350],
+                      x: [50 + (index * 40), 50 + (index * 40) + Math.sin(index) * 20]
+                    }}
+                    transition={{
+                      duration: 4,
+                      delay: 2 + index * 0.3,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  />
+                ))}
+              </svg>
+
+              {/* Floating Labels */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 2.5 }}
+                className="absolute top-4 left-4 bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full"
+              >
+                <span className="text-violet-400 text-xs font-mono">Circuit Network</span>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 3 }}
+                className="absolute bottom-4 right-4 bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full"
+              >
+                <span className="text-violet-400 text-xs font-mono">Live Data Flow</span>
+              </motion.div>
+
+              {/* Central Glow Effect */}
+              <motion.div
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-violet-500/10 rounded-full blur-3xl"
+                animate={{
+                  scale: [1, 1.2, 1],
+                  opacity: [0.3, 0.6, 0.3]
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
             </div>
 
-            {/* Floating Label */}
+            {/* Status Indicator */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 2 }}
+              transition={{ delay: 3.5 }}
               className="absolute -right-4 top-1/2 transform -translate-y-1/2"
             >
-              <div className="bg-violet-500 text-black px-4 py-2 rounded-full font-semibold text-sm shadow-lg">
-                ✓ Active
+              <div className="bg-violet-500 text-black px-4 py-2 rounded-full font-semibold text-sm shadow-lg flex items-center gap-2">
+                <motion.div
+                  className="w-2 h-2 bg-black rounded-full"
+                  animate={{
+                    scale: [1, 1.5, 1],
+                    opacity: [1, 0.5, 1]
+                  }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity
+                  }}
+                />
+                Active System
               </div>
             </motion.div>
+
+            {/* Floating Data Points */}
+            {[
+              { label: 'Voltage: 5.2V', delay: 4, x: -20, y: -60 },
+              { label: 'Current: 1.8A', delay: 4.5, x: 20, y: 60 },
+              { label: 'Temp: 24°C', delay: 5, x: -40, y: 40 },
+            ].map((data, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ 
+                  opacity: [0, 1, 1, 0],
+                  scale: [0.8, 1, 1, 0.8],
+                  y: [0, -10, -10, 0]
+                }}
+                transition={{
+                  duration: 3,
+                  delay: data.delay,
+                  repeat: Infinity,
+                  repeatDelay: 2
+                }}
+                className="absolute bg-black/60 backdrop-blur-sm px-2 py-1 rounded text-xs text-violet-300 font-mono"
+                style={{ 
+                  left: `calc(50% + ${data.x}px)`,
+                  top: `calc(50% + ${data.y}px)`
+                }}
+              >
+                {data.label}
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </div>

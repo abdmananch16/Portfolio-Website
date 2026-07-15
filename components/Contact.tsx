@@ -47,7 +47,7 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
-              Let's work
+              Let&apos;s work
               <br />
               together on your
               <br />
@@ -55,7 +55,7 @@ const Contact = () => {
             </h2>
 
             <p className="text-gray-400 mb-12 leading-relaxed">
-              I'm always interested in discussing electrical engineering projects, 
+              I&apos;m always interested in discussing electrical engineering projects, 
               research collaborations, and innovative ideas. Whether you have a question 
               or want to connect, feel free to reach out!
             </p>
