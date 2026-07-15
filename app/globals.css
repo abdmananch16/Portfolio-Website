@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #0a0a0a;
+  color: #e2e8f0;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFFEF9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1A1A1A;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0A0A0A;
+}
+
+/* Smooth transitions */
+a, button {
+  transition: all 0.3s ease;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 234, 179, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 234, 179, 0.6);
+  }
+}
+
+@keyframes electric-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes circuit-flow {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes voltage-wave {
+  0%, 100% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(10px) translateY(-5px);
+  }
+  75% {
+    transform: translateX(-10px) translateY(5px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-electric-pulse {
+  animation: electric-pulse 2s ease-in-out infinite;
+}
+
+.animate-voltage-wave {
+  animation: voltage-wave 4s ease-in-out infinite;
+}
+
+/* Circuit Board Pattern Background */
+.circuit-pattern {
+  background-image: 
+    linear-gradient(90deg, rgba(255, 234, 179, 0.03) 1px, transparent 1px),
+    linear-gradient(rgba(255, 234, 179, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Electric glow effect */
+.electric-glow {
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3),
+              0 0 20px rgba(255, 215, 0, 0.2),
+              0 0 30px rgba(255, 215, 0, 0.1);
+}
