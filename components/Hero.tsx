@@ -64,7 +64,7 @@ const Hero = () => {
               transition={{ delay: 0.5 }}
               className="text-gray-400 text-lg leading-relaxed mb-8 max-w-xl"
             >
-              I'm Abdul Mannan, an electrical engineering student. I design circuits, build Arduino projects, and develop Python applications — plus the hardware and software solutions around them.
+              I&apos;m Abdul Mannan, an electrical engineering student. I design circuits, build Arduino projects, and develop Python applications — plus the hardware and software solutions around them.
             </motion.p>
 
             {/* CTA Button */}
