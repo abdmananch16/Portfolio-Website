@@ -34,9 +34,15 @@ const Hero = () => {
               transition={{ delay: 0.2 }}
               className="mb-8"
             >
-              <span className="text-violet-500 text-sm font-mono tracking-wider">
-                01. ELECTRICAL ENGINEERING STUDENT
-              </span>
+              <div className="flex items-center gap-4 mb-4">
+                <span className="text-violet-500 text-sm font-mono tracking-wider">
+                  01. ELECTRICAL ENGINEERING STUDENT
+                </span>
+                <div className="flex items-center gap-2 px-3 py-1 bg-green-500/10 border border-green-500/30 rounded-full">
+                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                  <span className="text-green-400 text-xs font-mono">Available for Work</span>
+                </div>
+              </div>
             </motion.div>
 
             {/* Large Heading */}
@@ -47,13 +53,13 @@ const Hero = () => {
               className="mb-8"
             >
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-[0.9] mb-4">
-                Circuit&
+                I&apos;m Abdul
                 <br />
-                automation
+                <span className="text-violet-500">Mannan</span>
                 <br />
-                projects
+                Electrical
                 <br />
-                <span className="text-violet-500">thatwork.</span>
+                <span className="text-violet-500">Engineer.</span>
               </h1>
             </motion.div>
 

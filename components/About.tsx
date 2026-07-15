@@ -55,16 +55,16 @@ const About = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
-              Circuit Analysis
+              I&apos;m Abdul Mannan,
               <br />
-              Enthusiast &
+              <span className="text-violet-500">Electrical</span>
               <br />
-              <span className="text-violet-500">Electronics Explorer.</span>
+              Engineering Student.
             </h2>
 
             <div className="space-y-6 text-gray-400 leading-relaxed">
               <p>
-                I&apos;m an Electrical Engineering student with a deep passion for circuit analysis, 
+                I&apos;m Abdul Mannan, an Electrical Engineering student with a deep passion for circuit analysis, 
                 electronics exploration, and practical problem-solving. As a prompt engineer and 
                 lifelong learner, I continuously seek to expand my knowledge and apply it to 
                 real-world challenges.
