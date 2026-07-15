@@ -54,33 +54,66 @@ const About = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
-              I&apos;m Abdul Mannan,
-              <br />
-              <span className="text-violet-500">Electrical</span>
-              <br />
-              Engineering Student.
-            </h2>
+            <motion.h2 
+              className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-10 leading-tight"
+              initial={{ opacity: 0, x: -50 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8 }}
+            >
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={inView ? { opacity: 1 } : {}}
+                transition={{ delay: 0.3, duration: 0.8 }}
+                className="block"
+              >
+                About
+              </motion.span>
+              <motion.span
+                initial={{ opacity: 0, x: -30 }}
+                animate={inView ? { opacity: 1, x: 0 } : {}}
+                transition={{ delay: 0.5, duration: 0.8 }}
+                className="block text-violet-500"
+              >
+                Abdul Mannan
+              </motion.span>
+            </motion.h2>
 
-            <div className="space-y-6 text-gray-400 leading-relaxed">
-              <p>
-                I&apos;m Abdul Mannan, an Electrical Engineering student with a deep passion for circuit analysis, 
-                electronics exploration, and practical problem-solving. As a prompt engineer and 
-                lifelong learner, I continuously seek to expand my knowledge and apply it to 
-                real-world challenges.
-              </p>
-              <p>
-                My engineering journey includes hands-on projects such as developing an Arduino 
+            <motion.div 
+              className="space-y-8 text-gray-400 leading-relaxed text-lg"
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.7, duration: 0.8 }}
+            >
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={inView ? { opacity: 1 } : {}}
+                transition={{ delay: 0.9, duration: 1 }}
+              >
+                Abdul Mannan is an ambitious Electrical Engineering student with a deep passion for circuit analysis, 
+                electronics exploration, and practical problem-solving. As a skilled developer and 
+                lifelong learner, he continuously seeks to expand knowledge and apply it to 
+                real-world engineering challenges.
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={inView ? { opacity: 1 } : {}}
+                transition={{ delay: 1.1, duration: 1 }}
+              >
+                His engineering journey includes hands-on projects such as developing an Arduino 
                 Bluetooth-Controlled Smart Car, designing a 5V regulated power supply, creating 
                 digital logic circuits on veroboard, implementing an automatic LDR-based lighting 
                 system, and building Python desktop applications.
-              </p>
-              <p>
-                As a Python developer and electronics enthusiast, I enjoy working on projects 
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={inView ? { opacity: 1 } : {}}
+                transition={{ delay: 1.3, duration: 1 }}
+              >
+                As a Python developer and electronics enthusiast, Abdul Mannan enjoys working on projects 
                 that combine hardware and software, exploring IoT solutions, and continuously 
                 learning new technologies to stay at the forefront of electrical engineering innovation.
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
           </motion.div>
 
           {/* Right Stats */}
