@@ -280,56 +280,167 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Animated Background Elements */}
+      {/* 3D Animated Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Floating Particles */}
-        {Array.from({ length: 20 }).map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-violet-500/30 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -100, 0],
-              opacity: [0, 1, 0],
-              scale: [0, 1, 0],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
-        
-        {/* Gradient Orbs */}
+        {/* Animated Gradient Spheres */}
         <motion.div
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-violet-500/5 rounded-full blur-3xl"
+          className="absolute top-20 -left-40 w-80 h-80 bg-gradient-to-br from-violet-600/30 to-purple-600/20 rounded-full blur-3xl"
           animate={{
+            x: [0, 50, 0],
+            y: [0, 30, 0],
             scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
           }}
           transition={{
-            duration: 4,
+            duration: 8,
             repeat: Infinity,
             ease: "easeInOut",
           }}
         />
+        
         <motion.div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-violet-500/5 rounded-full blur-3xl"
+          className="absolute top-1/2 -right-40 w-80 h-80 bg-gradient-to-br from-blue-600/30 to-cyan-600/20 rounded-full blur-3xl"
           animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.5, 0.3, 0.5],
+            x: [0, -50, 0],
+            y: [0, -30, 0],
+            scale: [1, 1.2, 1],
           }}
           transition={{
-            duration: 4,
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
+        />
+
+        <motion.div
+          className="absolute bottom-20 left-1/3 w-72 h-72 bg-gradient-to-br from-pink-600/20 to-violet-600/10 rounded-full blur-3xl"
+          animate={{
+            x: [0, 30, 0],
+            y: [0, -40, 0],
+            scale: [1.1, 1, 1.1],
+          }}
+          transition={{
+            duration: 9,
             repeat: Infinity,
             ease: "easeInOut",
             delay: 2,
           }}
         />
+
+        {/* Animated Grid Lines */}
+        <svg className="absolute inset-0 w-full h-full" opacity="0.1">
+          <defs>
+            <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+              <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(139, 92, 246, 0.2)" strokeWidth="0.5"/>
+            </pattern>
+            <linearGradient id="gridGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style={{ stopColor: 'rgba(139, 92, 246, 0.3)', stopOpacity: 0.3 }} />
+              <stop offset="100%" style={{ stopColor: 'rgba(168, 85, 247, 0)', stopOpacity: 0 }} />
+            </linearGradient>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid)" />
+          <rect width="100%" height="100%" fill="url(#gridGradient)" />
+        </svg>
+
+        {/* Floating Particles */}
+        {Array.from({ length: 15 }).map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-violet-400 rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              y: [0, -200, 0],
+              opacity: [0, 0.8, 0],
+              scale: [0, 1, 0],
+            }}
+            transition={{
+              duration: 4 + Math.random() * 3,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+              ease: "easeInOut",
+            }}
+          />
+        ))}
+
+        {/* Light Rays */}
+        <motion.div
+          className="absolute top-0 left-1/4 w-1 h-full bg-gradient-to-b from-violet-400/50 to-transparent opacity-30"
+          animate={{
+            opacity: [0.3, 0.6, 0.3],
+            filter: ["blur(0px)", "blur(10px)", "blur(0px)"],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+
+        <motion.div
+          className="absolute top-0 right-1/4 w-1 h-full bg-gradient-to-b from-blue-400/50 to-transparent opacity-30"
+          animate={{
+            opacity: [0.3, 0.6, 0.3],
+            filter: ["blur(0px)", "blur(10px)", "blur(0px)"],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
+        />
+
+        {/* 3D Cube Effect Boxes */}
+        {Array.from({ length: 8 }).map((_, i) => (
+          <motion.div
+            key={`cube-${i}`}
+            className="absolute border border-violet-500/20 rounded-lg"
+            style={{
+              width: 60 + i * 20,
+              height: 60 + i * 20,
+              left: `${10 + i * 10}%`,
+              top: `${20 + (i % 3) * 20}%`,
+            }}
+            animate={{
+              rotateX: [0, 360],
+              rotateY: [0, 360],
+              rotateZ: [0, 360],
+              opacity: [0.1, 0.3, 0.1],
+            }}
+            transition={{
+              duration: 15 + i * 2,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          />
+        ))}
+
+        {/* Pulsing Orbs */}
+        {Array.from({ length: 4 }).map((_, i) => (
+          <motion.div
+            key={`orb-${i}`}
+            className="absolute rounded-full border border-violet-400/30"
+            style={{
+              width: 100 + i * 50,
+              height: 100 + i * 50,
+              left: `${25 + i * 15}%`,
+              top: `${30 + i * 10}%`,
+            }}
+            animate={{
+              scale: [1, 1.1, 1],
+              opacity: [0.2, 0.4, 0.2],
+            }}
+            transition={{
+              duration: 4 + i,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 0.5,
+            }}
+          />
+        ))}
       </div>
 
       {/* Scroll Indicator */}
