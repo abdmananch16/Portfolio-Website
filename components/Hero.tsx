@@ -46,129 +46,147 @@ const Hero = () => {
               </div>
             </motion.div>
 
-            {/* Large Heading */}
+            {/* Large Heading with Card Design */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="mb-8"
+              className="mb-8 flex flex-col items-center lg:items-start"
             >
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[0.9] mb-4">
-                <motion.span
-                  initial={{ opacity: 0, x: -30, rotateX: -90 }}
-                  animate={{ opacity: 1, x: 0, rotateX: 0 }}
+              {/* Name Cards */}
+              <div className="relative mb-6">
+                {/* Abdul Card - White Background */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20, rotateX: -45 }}
+                  animate={{ opacity: 1, y: 0, rotateX: 0 }}
                   transition={{ 
                     delay: 0.5, 
                     duration: 0.8,
                     type: "spring",
                     stiffness: 100
                   }}
-                  className="block"
+                  className="bg-white text-gray-300 px-8 py-6 rounded-lg shadow-2xl mb-4 relative z-10"
                   whileHover={{ 
-                    scale: 1.05,
-                    textShadow: "0 0 20px rgba(255, 255, 255, 0.5)"
+                    scale: 1.02,
+                    boxShadow: "0 20px 40px rgba(255, 255, 255, 0.1)"
                   }}
                 >
-                  <motion.span
-                    animate={{
-                      background: [
-                        "linear-gradient(45deg, #fff, #fff)",
-                        "linear-gradient(45deg, #fff, #e5e7eb)",
-                        "linear-gradient(45deg, #fff, #fff)"
-                      ]
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                    style={{
-                      backgroundClip: "text",
-                      WebkitBackgroundClip: "text",
-                    }}
-                  >
-                    Abdul
-                  </motion.span>
-                </motion.span>
-                <motion.span
-                  initial={{ opacity: 0, x: 30, rotateX: 90 }}
-                  animate={{ opacity: 1, x: 0, rotateX: 0 }}
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-none">
+                    <motion.span
+                      animate={{
+                        background: [
+                          "linear-gradient(45deg, #d1d5db, #9ca3af)",
+                          "linear-gradient(45deg, #9ca3af, #6b7280)",
+                          "linear-gradient(45deg, #d1d5db, #9ca3af)"
+                        ]
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                      style={{
+                        backgroundClip: "text",
+                        WebkitBackgroundClip: "text",
+                        color: "transparent"
+                      }}
+                    >
+                      Abdul
+                    </motion.span>
+                  </h1>
+                </motion.div>
+
+                {/* Mannan Card - Violet Background */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20, rotateX: 45 }}
+                  animate={{ opacity: 1, y: 0, rotateX: 0 }}
                   transition={{ 
                     delay: 0.7, 
                     duration: 0.8,
                     type: "spring",
                     stiffness: 100
                   }}
-                  className="block text-violet-500"
+                  className="bg-gradient-to-r from-violet-500 to-purple-600 text-white px-8 py-6 rounded-lg shadow-2xl relative z-20"
+                  style={{ marginTop: '-20px' }}
                   whileHover={{ 
-                    scale: 1.05,
-                    textShadow: "0 0 20px rgba(139, 92, 246, 0.8)"
+                    scale: 1.02,
+                    boxShadow: "0 20px 40px rgba(139, 92, 246, 0.3)"
                   }}
                 >
-                  <motion.span
-                    animate={{
-                      background: [
-                        "linear-gradient(45deg, #8B5CF6, #A855F7)",
-                        "linear-gradient(45deg, #A855F7, #C084FC)",
-                        "linear-gradient(45deg, #8B5CF6, #A855F7)"
-                      ]
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: 1
-                    }}
-                    style={{
-                      backgroundClip: "text",
-                      WebkitBackgroundClip: "text",
-                    }}
-                  >
-                    Mannan
-                  </motion.span>
-                </motion.span>
-              </h1>
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-none">
+                    <motion.span
+                      animate={{
+                        background: [
+                          "linear-gradient(45deg, #ffffff, #f3f4f6)",
+                          "linear-gradient(45deg, #f3f4f6, #e5e7eb)",
+                          "linear-gradient(45deg, #ffffff, #f3f4f6)"
+                        ]
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: 1
+                      }}
+                      style={{
+                        backgroundClip: "text",
+                        WebkitBackgroundClip: "text",
+                        color: "transparent"
+                      }}
+                    >
+                      Mannan
+                    </motion.span>
+                  </h1>
+                </motion.div>
+              </div>
             </motion.div>
 
             {/* Description */}
-            <motion.p
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9 }}
-              className="text-gray-400 text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
+              className="mb-12 text-center lg:text-left"
             >
-              <motion.span
+              <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.1, duration: 1 }}
-                className="text-violet-400 font-semibold block mb-2"
+                className="text-violet-400 font-semibold text-lg mb-4"
               >
                 Electrical Engineering Student - NUST, Islamabad
-              </motion.span>
-              Specializing in embedded systems, Arduino programming, and Python development. 
-              Creating innovative hardware and software solutions with expertise in circuit design, 
-              automation, and web development.
-            </motion.p>
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.3, duration: 1 }}
+                className="text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto lg:mx-0"
+              >
+                Specializing in embedded systems, Arduino programming, and Python development. 
+                Creating innovative hardware and software solutions with expertise in circuit design, 
+                automation, and web development.
+              </motion.p>
+            </motion.div>
 
             {/* CTA Button */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.3 }}
-              className="flex items-center gap-4 mb-8 justify-center lg:justify-start"
+              transition={{ delay: 1.5 }}
+              className="flex items-center gap-6 mb-16 justify-center lg:justify-start"
             >
               {/* Hire Me Button */}
               <motion.a
                 href="mailto:abdmananch16@gmail.com?subject=Job Opportunity&body=Hi Abdul Mannan, I would like to discuss a job opportunity with you."
-                className="group px-8 py-4 bg-violet-500 hover:bg-violet-600 text-black font-semibold rounded-full transition-all flex items-center gap-2"
+                className="group px-10 py-4 bg-violet-500 hover:bg-violet-600 text-black font-bold rounded-full transition-all flex items-center gap-3 text-lg shadow-xl"
                 whileHover={{ 
                   scale: 1.05,
-                  boxShadow: "0 0 25px rgba(139, 92, 246, 0.5)"
+                  boxShadow: "0 10px 30px rgba(139, 92, 246, 0.4)"
                 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1.5 }}
+                transition={{ delay: 1.7 }}
               >
                 <motion.span
                   animate={{ 
@@ -179,29 +197,15 @@ const Hero = () => {
                     repeat: Infinity,
                     ease: "easeInOut"
                   }}
+                  className="text-xl"
                 >
-                  ✉️
+                  📧
                 </motion.span>
-                <motion.span
-                  animate={{
-                    background: [
-                      "linear-gradient(45deg, #000, #000)",
-                      "linear-gradient(45deg, #4a5568, #000)",
-                      "linear-gradient(45deg, #000, #000)"
-                    ]
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                >
-                  Hire Me
-                </motion.span>
+                Hire Me
               </motion.a>
 
               {/* Social Icons */}
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-4">
                 {[
                   { icon: FaGithub, href: 'https://github.com', label: 'GitHub' },
                   { icon: FaLinkedin, href: 'https://linkedin.com/in/abdul-mannan-23a0bb3a5', label: 'LinkedIn' },
@@ -210,12 +214,15 @@ const Hero = () => {
                   <motion.a
                     key={index}
                     href={social.href}
-                    className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition-all"
-                    whileHover={{ scale: 1.1, y: -2 }}
+                    className="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-violet-500/20 text-gray-400 hover:text-violet-400 transition-all border border-white/10 hover:border-violet-500/50"
+                    whileHover={{ scale: 1.1, y: -3 }}
                     whileTap={{ scale: 0.9 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1.9 + index * 0.1 }}
                     title={social.label}
                   >
-                    <social.icon size={18} />
+                    <social.icon size={20} />
                   </motion.a>
                 ))}
               </div>
@@ -225,43 +232,26 @@ const Hero = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 1.5 }}
-              className="mt-12 text-gray-500 text-sm font-mono"
+              transition={{ delay: 2.2 }}
+              className="text-gray-500 text-lg font-mono text-center lg:text-left"
             >
               <motion.div
                 animate={{ 
-                  opacity: [0.5, 1, 0.5],
-                  scale: [1, 1.02, 1],
-                  textShadow: [
-                    "0 0 0px rgba(139, 92, 246, 0)",
-                    "0 0 10px rgba(139, 92, 246, 0.5)",
-                    "0 0 0px rgba(139, 92, 246, 0)"
-                  ]
+                  opacity: [0.6, 1, 0.6],
+                  scale: [1, 1.01, 1],
                 }}
                 transition={{ 
-                  duration: 2, 
+                  duration: 3, 
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
                 className="relative"
               >
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-violet-500/20 to-transparent blur-sm"
-                  animate={{
-                    opacity: [0, 0.3, 0],
-                    scale: [0.8, 1.2, 0.8]
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                />
                 <TypeAnimation
                   sequence={[
-                    'Embedded Systems Developer',
+                    'Arduino Programmer',
                     2000,
-                    'Arduino Programmer', 
+                    'Embedded Systems Developer',
                     2000,
                     'Python Developer',
                     2000,
