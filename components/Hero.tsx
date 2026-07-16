@@ -53,51 +53,28 @@ const Hero = () => {
               transition={{ delay: 0.3 }}
               className="mb-8 flex flex-col items-center lg:items-start"
             >
-              {/* Name Cards */}
-              <div className="relative mb-6">
-                {/* Abdul Card - White Background */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20, rotateX: -45 }}
-                  animate={{ opacity: 1, y: 0, rotateX: 0 }}
-                  transition={{ 
-                    delay: 0.5, 
-                    duration: 0.8,
-                    type: "spring",
-                    stiffness: 100
-                  }}
-                  className="bg-white text-gray-800 px-8 py-6 rounded-lg shadow-2xl mb-4 relative z-10"
-                  whileHover={{ 
-                    scale: 1.02,
-                    boxShadow: "0 20px 40px rgba(255, 255, 255, 0.1)"
-                  }}
-                >
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-none text-gray-700">
-                    Abdul
-                  </h1>
-                </motion.div>
-
-                {/* Mannan Card - Violet Background */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20, rotateX: 45 }}
-                  animate={{ opacity: 1, y: 0, rotateX: 0 }}
-                  transition={{ 
-                    delay: 0.7, 
-                    duration: 0.8,
-                    type: "spring",
-                    stiffness: 100
-                  }}
-                  className="bg-gradient-to-r from-violet-500 to-purple-600 text-white px-8 py-6 rounded-lg shadow-2xl relative z-20"
-                  style={{ marginTop: '-20px' }}
-                  whileHover={{ 
-                    scale: 1.02,
-                    boxShadow: "0 20px 40px rgba(139, 92, 246, 0.3)"
-                  }}
-                >
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-none text-white">
-                    Mannan
-                  </h1>
-                </motion.div>
-              </div>
+              {/* Name Card - Combined */}
+              <motion.div
+                initial={{ opacity: 0, y: 20, rotateX: -45 }}
+                animate={{ opacity: 1, y: 0, rotateX: 0 }}
+                transition={{ 
+                  delay: 0.5, 
+                  duration: 0.8,
+                  type: "spring",
+                  stiffness: 100
+                }}
+                className="bg-gradient-to-r from-violet-500 to-purple-600 text-white px-12 py-8 rounded-xl shadow-2xl relative z-20"
+                whileHover={{ 
+                  scale: 1.02,
+                  boxShadow: "0 20px 40px rgba(139, 92, 246, 0.4)"
+                }}
+              >
+                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight text-white">
+                  Abdul
+                  <br />
+                  Mannan
+                </h1>
+              </motion.div>
             </motion.div>
 
             {/* Description */}
