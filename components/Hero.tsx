@@ -92,51 +92,32 @@ const Hero = () => {
                   Mannan
                 </motion.h1>
 
-                {/* Python Developer Line */}
-                <motion.p
-                  className="text-xl sm:text-2xl md:text-3xl font-bold text-violet-400 mt-4"
-                  initial={{ opacity: 0, x: -100 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ 
-                    delay: 1.3, 
-                    duration: 0.8,
-                    type: "spring",
-                    stiffness: 80
-                  }}
-                  whileHover={{ 
-                    scale: 1.05,
-                    textShadow: "0 0 20px rgba(139, 92, 246, 0.8)"
-                  }}
+                {/* Three Titles - Right after name */}
+                <motion.div
+                  className="mt-4 flex flex-wrap gap-2 items-center"
                 >
-                  Python Developer
-                </motion.p>
+                  {['Python Developer', 'Circuit Designer', 'Electrical Engineering Student'].map((title, index) => (
+                    <motion.span
+                      key={index}
+                      initial={{ opacity: 0, x: -50 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ 
+                        delay: 1.3 + index * 0.2, 
+                        duration: 0.6,
+                        type: "spring",
+                        stiffness: 80
+                      }}
+                      whileHover={{
+                        scale: 1.08,
+                        boxShadow: "0 0 20px rgba(139, 92, 246, 0.4)"
+                      }}
+                      className="px-3 py-1 rounded-full border border-violet-400/50 text-xs sm:text-sm text-violet-400 font-semibold bg-violet-500/5"
+                    >
+                      {title}
+                    </motion.span>
+                  ))}
+                </motion.div>
               </div>
-
-              {/* Three Titles - Appear one after another */}
-              <motion.div
-                className="mt-8 flex flex-wrap gap-3 items-center"
-              >
-                {['Electrical Engineering Student', 'Circuit Analysis Enthusiast', 'Arduino Developer'].map((title, index) => (
-                  <motion.span
-                    key={index}
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ 
-                      delay: 1.7 + index * 0.3, 
-                      duration: 0.6,
-                      type: "spring",
-                      stiffness: 80
-                    }}
-                    whileHover={{
-                      scale: 1.08,
-                      boxShadow: "0 0 20px rgba(139, 92, 246, 0.4)"
-                    }}
-                    className="px-4 py-2 rounded-full border border-violet-400/30 text-xs sm:text-sm md:text-base text-violet-400 font-semibold"
-                  >
-                    {title}
-                  </motion.span>
-                ))}
-              </motion.div>
             </motion.div>
 
             {/* Description */}
