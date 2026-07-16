@@ -65,34 +65,14 @@ const Hero = () => {
                     type: "spring",
                     stiffness: 100
                   }}
-                  className="bg-white text-gray-300 px-8 py-6 rounded-lg shadow-2xl mb-4 relative z-10"
+                  className="bg-white text-gray-800 px-8 py-6 rounded-lg shadow-2xl mb-4 relative z-10"
                   whileHover={{ 
                     scale: 1.02,
                     boxShadow: "0 20px 40px rgba(255, 255, 255, 0.1)"
                   }}
                 >
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-none">
-                    <motion.span
-                      animate={{
-                        background: [
-                          "linear-gradient(45deg, #d1d5db, #9ca3af)",
-                          "linear-gradient(45deg, #9ca3af, #6b7280)",
-                          "linear-gradient(45deg, #d1d5db, #9ca3af)"
-                        ]
-                      }}
-                      transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                      }}
-                      style={{
-                        backgroundClip: "text",
-                        WebkitBackgroundClip: "text",
-                        color: "transparent"
-                      }}
-                    >
-                      Abdul
-                    </motion.span>
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-none text-gray-700">
+                    Abdul
                   </h1>
                 </motion.div>
 
@@ -113,29 +93,8 @@ const Hero = () => {
                     boxShadow: "0 20px 40px rgba(139, 92, 246, 0.3)"
                   }}
                 >
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-none">
-                    <motion.span
-                      animate={{
-                        background: [
-                          "linear-gradient(45deg, #ffffff, #f3f4f6)",
-                          "linear-gradient(45deg, #f3f4f6, #e5e7eb)",
-                          "linear-gradient(45deg, #ffffff, #f3f4f6)"
-                        ]
-                      }}
-                      transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: 1
-                      }}
-                      style={{
-                        backgroundClip: "text",
-                        WebkitBackgroundClip: "text",
-                        color: "transparent"
-                      }}
-                    >
-                      Mannan
-                    </motion.span>
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-none text-white">
+                    Mannan
                   </h1>
                 </motion.div>
               </div>
