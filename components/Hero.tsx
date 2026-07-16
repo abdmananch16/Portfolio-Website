@@ -89,6 +89,35 @@ const Hero = () => {
                   Mannan
                 </motion.span>
               </h1>
+
+              {/* Python Developer - Below Name */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.9, duration: 0.8 }}
+                className="mt-6"
+              >
+                <motion.p
+                  animate={{
+                    opacity: [0.7, 1, 0.7],
+                    scale: [0.98, 1.02, 0.98],
+                    textShadow: [
+                      "0 0 10px rgba(139, 92, 246, 0)",
+                      "0 0 15px rgba(139, 92, 246, 0.5)",
+                      "0 0 10px rgba(139, 92, 246, 0)"
+                    ]
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  whileHover={{ scale: 1.05 }}
+                  className="text-2xl sm:text-3xl md:text-4xl font-semibold text-violet-400"
+                >
+                  Python Developer
+                </motion.p>
+              </motion.div>
             </motion.div>
 
             {/* Description */}
@@ -98,14 +127,25 @@ const Hero = () => {
               transition={{ delay: 0.9 }}
               className="mb-12 text-center lg:text-left"
             >
-              <motion.p
+              <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.1, duration: 1 }}
-                className="text-violet-400 font-semibold text-lg mb-4"
+                className="text-2xl sm:text-3xl md:text-4xl font-bold text-violet-400 mb-6"
               >
-                Electrical Engineering Student - NUST, Islamabad
-              </motion.p>
+                <motion.p
+                  whileHover={{ scale: 1.02 }}
+                  className="mb-3"
+                >
+                  Electrical Engineering Student
+                </motion.p>
+                <motion.p
+                  whileHover={{ scale: 1.02 }}
+                  className="text-white"
+                >
+                  Circuit Analysis Enthusiast
+                </motion.p>
+              </motion.div>
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
