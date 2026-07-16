@@ -46,35 +46,49 @@ const Hero = () => {
               </div>
             </motion.div>
 
-            {/* Large Heading with Card Design */}
+            {/* Large Heading */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="mb-8 flex flex-col items-center lg:items-start"
+              className="mb-8"
             >
-              {/* Name Card - Combined */}
-              <motion.div
-                initial={{ opacity: 0, y: 20, rotateX: -45 }}
-                animate={{ opacity: 1, y: 0, rotateX: 0 }}
-                transition={{ 
-                  delay: 0.5, 
-                  duration: 0.8,
-                  type: "spring",
-                  stiffness: 100
-                }}
-                className="bg-gradient-to-r from-violet-500 to-purple-600 text-white px-12 py-8 rounded-xl shadow-2xl relative z-20"
-                whileHover={{ 
-                  scale: 1.02,
-                  boxShadow: "0 20px 40px rgba(139, 92, 246, 0.4)"
-                }}
-              >
-                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight text-white">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-tight">
+                <motion.span
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ 
+                    delay: 0.5, 
+                    duration: 0.8,
+                    type: "spring",
+                    stiffness: 100
+                  }}
+                  whileHover={{ 
+                    scale: 1.05,
+                    textShadow: "0 0 20px rgba(255, 255, 255, 0.5)"
+                  }}
+                  className="block"
+                >
                   Abdul
-                  <br />
+                </motion.span>
+                <motion.span
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ 
+                    delay: 0.7, 
+                    duration: 0.8,
+                    type: "spring",
+                    stiffness: 100
+                  }}
+                  whileHover={{ 
+                    scale: 1.05,
+                    textShadow: "0 0 20px rgba(139, 92, 246, 0.8)"
+                  }}
+                  className="block text-violet-500"
+                >
                   Mannan
-                </h1>
-              </motion.div>
+                </motion.span>
+              </h1>
             </motion.div>
 
             {/* Description */}
