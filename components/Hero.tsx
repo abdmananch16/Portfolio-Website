@@ -52,14 +52,23 @@ const Hero = () => {
               transition={{ delay: 0.3 }}
               className="mb-8"
             >
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-[0.9] mb-4">
-                I&apos;m Abdul
-                <br />
-                <span className="text-violet-500">Mannan</span>
-                <br />
-                Electrical
-                <br />
-                <span className="text-violet-500">Engineer.</span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[0.9] mb-4">
+                <motion.span
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.5, duration: 0.8 }}
+                  className="block"
+                >
+                  Abdul
+                </motion.span>
+                <motion.span
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.7, duration: 0.8 }}
+                  className="block text-violet-500"
+                >
+                  Mannan
+                </motion.span>
               </h1>
             </motion.div>
 
@@ -67,17 +76,26 @@ const Hero = () => {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
+              transition={{ delay: 0.9 }}
               className="text-gray-400 text-lg leading-relaxed mb-8 max-w-xl"
             >
-              I&apos;m Abdul Mannan, an electrical engineering student. I design circuits, build Arduino projects, and develop Python applications — plus the hardware and software solutions around them.
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.1, duration: 1 }}
+                className="text-violet-400 font-semibold block mb-2"
+              >
+                Electrical Engineering Student
+              </motion.span>
+              Specializing in circuit design, Arduino projects, and Python applications. 
+              Creating innovative hardware and software solutions for real-world challenges.
             </motion.p>
 
             {/* CTA Button */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
+              transition={{ delay: 1.3 }}
               className="flex items-center gap-4"
             >
               <motion.a
@@ -114,7 +132,7 @@ const Hero = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.8 }}
+              transition={{ delay: 1.5 }}
               className="mt-12 text-gray-500 text-sm font-mono"
             >
               <TypeAnimation
