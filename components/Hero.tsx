@@ -96,7 +96,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.3 }}
-              className="flex items-center gap-4"
+              className="flex items-center gap-4 mb-8"
             >
               <motion.a
                 href="#projects"
@@ -105,15 +105,29 @@ const Hero = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <span>▶</span>
-                See how it works
+                See Projects
+              </motion.a>
+
+              {/* Hire Me Button */}
+              <motion.a
+                href="mailto:abdmananch16@gmail.com?subject=Job Opportunity&body=Hi Abdul Mannan, I would like to discuss a job opportunity with you."
+                className="group px-8 py-4 bg-green-500 hover:bg-green-600 text-black font-semibold rounded-full transition-all flex items-center gap-2"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1.5 }}
+              >
+                <span>✉️</span>
+                Hire Me
               </motion.a>
 
               {/* Social Icons */}
               <div className="flex items-center gap-3">
                 {[
-                  { icon: FaGithub, href: 'https://github.com' },
-                  { icon: FaLinkedin, href: 'https://linkedin.com' },
-                  { icon: FaEnvelope, href: '#contact' },
+                  { icon: FaGithub, href: 'https://github.com', label: 'GitHub' },
+                  { icon: FaLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+                  { icon: FaEnvelope, href: 'mailto:abdmananch16@gmail.com', label: 'Email' },
                 ].map((social, index) => (
                   <motion.a
                     key={index}
@@ -121,6 +135,7 @@ const Hero = () => {
                     className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition-all"
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.9 }}
+                    title={social.label}
                   >
                     <social.icon size={18} />
                   </motion.a>

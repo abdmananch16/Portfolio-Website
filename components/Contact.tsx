@@ -63,7 +63,7 @@ const Contact = () => {
             {/* Contact Info */}
             <div className="space-y-6 mb-12">
               {[
-                { icon: FaEnvelope, text: 'your.email@example.com', href: 'mailto:your.email@example.com' },
+                { icon: FaEnvelope, text: 'abdmananch16@gmail.com', href: 'mailto:abdmananch16@gmail.com' },
                 { icon: FaPhone, text: '+1 (555) 123-4567', href: 'tel:+15551234567' },
                 { icon: FaMapMarkerAlt, text: 'Your City, Country', href: '#' },
               ].map((item, index) => (
@@ -83,6 +83,24 @@ const Contact = () => {
                 </motion.a>
               ))}
             </div>
+
+            {/* Hire Me Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.6 }}
+              className="mb-8"
+            >
+              <motion.a
+                href="mailto:abdmananch16@gmail.com?subject=Job Opportunity&body=Hi Abdul Mannan, I would like to discuss a job opportunity with you."
+                className="inline-flex items-center gap-3 px-8 py-4 bg-green-500 hover:bg-green-600 text-black font-bold rounded-full transition-all text-lg"
+                whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(34, 197, 94, 0.5)" }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span>💼</span>
+                Hire Me Now
+              </motion.a>
+            </motion.div>
 
             {/* Social Links */}
             <div className="flex gap-4">
