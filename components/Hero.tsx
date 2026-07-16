@@ -98,16 +98,6 @@ const Hero = () => {
               transition={{ delay: 1.3 }}
               className="flex items-center gap-4 mb-8"
             >
-              <motion.a
-                href="#projects"
-                className="group px-8 py-4 bg-violet-500 hover:bg-violet-600 text-black font-semibold rounded-full transition-all flex items-center gap-2"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span>▶</span>
-                See Projects
-              </motion.a>
-
               {/* Hire Me Button */}
               <motion.a
                 href="mailto:abdmananch16@gmail.com?subject=Job Opportunity&body=Hi Abdul Mannan, I would like to discuss a job opportunity with you."
