@@ -93,8 +93,8 @@ const Contact = () => {
             >
               <motion.a
                 href="mailto:abdmananch16@gmail.com?subject=Job Opportunity&body=Hi Abdul Mannan, I would like to discuss a job opportunity with you."
-                className="inline-flex items-center gap-3 px-8 py-4 bg-green-500 hover:bg-green-600 text-black font-bold rounded-full transition-all text-lg"
-                whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(34, 197, 94, 0.5)" }}
+                className="inline-flex items-center gap-3 px-8 py-4 bg-violet-500 hover:bg-violet-600 text-black font-bold rounded-full transition-all text-lg"
+                whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(139, 92, 246, 0.5)" }}
                 whileTap={{ scale: 0.95 }}
               >
                 <span>💼</span>

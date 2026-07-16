@@ -20,12 +20,13 @@ const Hero = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
+        <div className="grid lg:grid-cols-1 gap-12 items-center">
+          {/* Main Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
+            className="text-center lg:text-left"
           >
             {/* Small Label */}
             <motion.div
@@ -34,7 +35,7 @@ const Hero = () => {
               transition={{ delay: 0.2 }}
               className="mb-8"
             >
-              <div className="flex items-center gap-4 mb-4">
+              <div className="flex items-center gap-4 mb-4 justify-center lg:justify-start">
                 <span className="text-violet-500 text-sm font-mono tracking-wider">
                   01. ELECTRICAL ENGINEERING STUDENT
                 </span>
@@ -54,29 +55,87 @@ const Hero = () => {
             >
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[0.9] mb-4">
                 <motion.span
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.5, duration: 0.8 }}
+                  initial={{ opacity: 0, x: -30, rotateX: -90 }}
+                  animate={{ opacity: 1, x: 0, rotateX: 0 }}
+                  transition={{ 
+                    delay: 0.5, 
+                    duration: 0.8,
+                    type: "spring",
+                    stiffness: 100
+                  }}
                   className="block"
+                  whileHover={{ 
+                    scale: 1.05,
+                    textShadow: "0 0 20px rgba(255, 255, 255, 0.5)"
+                  }}
                 >
-                  Abdul
+                  <motion.span
+                    animate={{
+                      background: [
+                        "linear-gradient(45deg, #fff, #fff)",
+                        "linear-gradient(45deg, #fff, #e5e7eb)",
+                        "linear-gradient(45deg, #fff, #fff)"
+                      ]
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                    style={{
+                      backgroundClip: "text",
+                      WebkitBackgroundClip: "text",
+                    }}
+                  >
+                    Abdul
+                  </motion.span>
                 </motion.span>
                 <motion.span
-                  initial={{ opacity: 0, x: 30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.7, duration: 0.8 }}
+                  initial={{ opacity: 0, x: 30, rotateX: 90 }}
+                  animate={{ opacity: 1, x: 0, rotateX: 0 }}
+                  transition={{ 
+                    delay: 0.7, 
+                    duration: 0.8,
+                    type: "spring",
+                    stiffness: 100
+                  }}
                   className="block text-violet-500"
+                  whileHover={{ 
+                    scale: 1.05,
+                    textShadow: "0 0 20px rgba(139, 92, 246, 0.8)"
+                  }}
                 >
-                  Mannan
+                  <motion.span
+                    animate={{
+                      background: [
+                        "linear-gradient(45deg, #8B5CF6, #A855F7)",
+                        "linear-gradient(45deg, #A855F7, #C084FC)",
+                        "linear-gradient(45deg, #8B5CF6, #A855F7)"
+                      ]
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 1
+                    }}
+                    style={{
+                      backgroundClip: "text",
+                      WebkitBackgroundClip: "text",
+                    }}
+                  >
+                    Mannan
+                  </motion.span>
                 </motion.span>
               </h1>
             </motion.div>
 
+            {/* Description */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9 }}
-              className="text-gray-400 text-lg leading-relaxed mb-8 max-w-xl"
+              className="text-gray-400 text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
             >
               <motion.span
                 initial={{ opacity: 0 }}
@@ -96,20 +155,49 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.3 }}
-              className="flex items-center gap-4 mb-8"
+              className="flex items-center gap-4 mb-8 justify-center lg:justify-start"
             >
               {/* Hire Me Button */}
               <motion.a
                 href="mailto:abdmananch16@gmail.com?subject=Job Opportunity&body=Hi Abdul Mannan, I would like to discuss a job opportunity with you."
-                className="group px-8 py-4 bg-green-500 hover:bg-green-600 text-black font-semibold rounded-full transition-all flex items-center gap-2"
-                whileHover={{ scale: 1.05 }}
+                className="group px-8 py-4 bg-violet-500 hover:bg-violet-600 text-black font-semibold rounded-full transition-all flex items-center gap-2"
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 0 25px rgba(139, 92, 246, 0.5)"
+                }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.5 }}
               >
-                <span>✉️</span>
-                Hire Me
+                <motion.span
+                  animate={{ 
+                    rotate: [0, 15, -15, 0],
+                  }}
+                  transition={{ 
+                    duration: 2, 
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                >
+                  ✉️
+                </motion.span>
+                <motion.span
+                  animate={{
+                    background: [
+                      "linear-gradient(45deg, #000, #000)",
+                      "linear-gradient(45deg, #4a5568, #000)",
+                      "linear-gradient(45deg, #000, #000)"
+                    ]
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                >
+                  Hire Me
+                </motion.span>
               </motion.a>
 
               {/* Social Icons */}
@@ -140,139 +228,109 @@ const Hero = () => {
               transition={{ delay: 1.5 }}
               className="mt-12 text-gray-500 text-sm font-mono"
             >
-              <TypeAnimation
-                sequence={[
-                  'Embedded Systems Developer',
-                  2000,
-                  'Arduino Programmer', 
-                  2000,
-                  'Python Developer',
-                  2000,
-                  'Circuit Designer',
-                  2000,
-                  'NUST Engineering Student',
-                  2000,
-                ]}
-                wrapper="span"
-                speed={50}
-                repeat={Infinity}
-              />
-            </motion.div>
-          </motion.div>
-
-          {/* Right Content - Dashboard Preview */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative"
-          >
-            {/* Dashboard Card */}
-            <div className="bg-[#111] border border-white/5 rounded-2xl overflow-hidden shadow-2xl">
-              {/* Header */}
-              <div className="border-b border-white/5 p-4 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                </div>
-                <span className="text-gray-500 text-xs font-mono">Project Dashboard — Live stats and recent work</span>
-              </div>
-
-              {/* Content */}
-              <div className="p-6">
-                {/* Stats */}
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div>
-                    <div className="text-gray-500 text-xs mb-1">Projects</div>
-                    <div className="text-3xl font-bold text-white">25+</div>
-                  </div>
-                  <div>
-                    <div className="text-gray-500 text-xs mb-1">Success Rate</div>
-                    <div className="text-3xl font-bold text-violet-500">98.4%</div>
-                  </div>
-                </div>
-
-                {/* Progress Bars */}
-                <div className="space-y-3 mb-6">
-                  {[
-                    { label: 'Arduino Projects', value: 90 },
-                    { label: 'Circuit Design', value: 85 },
-                    { label: 'Python Apps', value: 80 },
-                  ].map((skill, index) => (
-                    <div key={index}>
-                      <div className="flex justify-between text-xs text-gray-500 mb-1">
-                        <span>{skill.label}</span>
-                        <span>{skill.value}%</span>
-                      </div>
-                      <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
-                        <motion.div
-                          className="h-full bg-violet-500"
-                          initial={{ width: 0 }}
-                          animate={{ width: `${skill.value}%` }}
-                          transition={{ duration: 1, delay: 1 + index * 0.2 }}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Recent Activity */}
-                <div className="space-y-2">
-                  <div className="text-gray-500 text-xs mb-2">► Recent Activity</div>
-                  {[
-                    'Bluetooth Smart Car',
-                    'LDR Lighting System',
-                    'Python Desktop App',
-                  ].map((activity, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 1.5 + index * 0.1 }}
-                      className="flex items-center gap-2 text-sm"
-                    >
-                      <div className="w-1.5 h-1.5 rounded-full bg-violet-500"></div>
-                      <span className="text-gray-400">{activity}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Footer Stats */}
-              <div className="border-t border-white/5 p-4 flex items-center justify-between">
-                <div>
-                  <div className="text-2xl font-bold text-white">1,284</div>
-                  <div className="text-xs text-gray-500">hours this week</div>
-                </div>
-                <div className="flex gap-1">
-                  {[60, 40, 80, 45, 90, 55, 75].map((height, index) => (
-                    <motion.div
-                      key={index}
-                      className="w-2 bg-violet-500 rounded-t"
-                      style={{ height: `${height}%` }}
-                      initial={{ height: 0 }}
-                      animate={{ height: `${height}%` }}
-                      transition={{ duration: 0.5, delay: 1.8 + index * 0.1 }}
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Floating Label */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 2 }}
-              className="absolute -right-4 top-1/2 transform -translate-y-1/2"
-            >
-              <div className="bg-violet-500 text-black px-4 py-2 rounded-full font-semibold text-sm shadow-lg">
-                ✓ Active
-              </div>
+              <motion.div
+                animate={{ 
+                  opacity: [0.5, 1, 0.5],
+                  scale: [1, 1.02, 1],
+                  textShadow: [
+                    "0 0 0px rgba(139, 92, 246, 0)",
+                    "0 0 10px rgba(139, 92, 246, 0.5)",
+                    "0 0 0px rgba(139, 92, 246, 0)"
+                  ]
+                }}
+                transition={{ 
+                  duration: 2, 
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="relative"
+              >
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-violet-500/20 to-transparent blur-sm"
+                  animate={{
+                    opacity: [0, 0.3, 0],
+                    scale: [0.8, 1.2, 0.8]
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+                <TypeAnimation
+                  sequence={[
+                    'Embedded Systems Developer',
+                    2000,
+                    'Arduino Programmer', 
+                    2000,
+                    'Python Developer',
+                    2000,
+                    'Circuit Designer',
+                    2000,
+                    'NUST Engineering Student',
+                    2000,
+                  ]}
+                  wrapper="span"
+                  speed={50}
+                  repeat={Infinity}
+                  className="relative z-10"
+                />
+              </motion.div>
             </motion.div>
           </motion.div>
         </div>
+      </div>
+
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Floating Particles */}
+        {Array.from({ length: 20 }).map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-violet-500/30 rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              y: [0, -100, 0],
+              opacity: [0, 1, 0],
+              scale: [0, 1, 0],
+            }}
+            transition={{
+              duration: 3 + Math.random() * 2,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
+        
+        {/* Gradient Orbs */}
+        <motion.div
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-violet-500/5 rounded-full blur-3xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-violet-500/5 rounded-full blur-3xl"
+          animate={{
+            scale: [1.2, 1, 1.2],
+            opacity: [0.5, 0.3, 0.5],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2,
+          }}
+        />
       </div>
 
       {/* Scroll Indicator */}

@@ -70,7 +70,7 @@ const Navbar = () => {
             </button>
             <motion.a
               href="mailto:abdmananch16@gmail.com?subject=Job Opportunity&body=Hi Abdul Mannan, I would like to discuss a job opportunity with you."
-              className="px-6 py-2.5 bg-green-500 hover:bg-green-600 text-black font-semibold rounded-full transition-all text-sm"
+              className="px-6 py-2.5 bg-violet-500 hover:bg-violet-600 text-black font-semibold rounded-full transition-all text-sm"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -109,7 +109,7 @@ const Navbar = () => {
             ))}
             <a
               href="mailto:abdmananch16@gmail.com?subject=Job Opportunity&body=Hi Abdul Mannan, I would like to discuss a job opportunity with you."
-              className="block px-6 py-2.5 bg-green-500 text-black font-semibold rounded-full text-center"
+              className="block px-6 py-2.5 bg-violet-500 text-black font-semibold rounded-full text-center"
               onClick={() => setIsOpen(false)}
             >
               Hire Me
