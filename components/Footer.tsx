@@ -13,7 +13,7 @@ const Footer = () => {
             transition={{ duration: 0.6 }}
             className="text-gray-500 text-sm"
           >
-            © 2024 Abdul Mannan. All rights reserved.
+            © 2026 Abdul Mannan. All rights reserved.
           </motion.div>
 
           <motion.div

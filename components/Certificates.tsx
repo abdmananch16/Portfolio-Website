@@ -13,58 +13,33 @@ const Certificates = () => {
 
   const certificates = [
     {
-      title: 'Python Programming Certification',
-      issuer: 'Programming Institute',
-      date: '2024',
+      title: 'Programming for Everybody (Getting Started with Python)',
+      issuer: 'University of Michigan via Coursera',
       type: 'Programming Certification',
       icon: SiPython,
-      description: 'Advanced Python programming for automation and web development',
-      skills: ['Python', 'Web Scraping', 'Automation', 'Streamlit', 'File Handling']
+      description: 'Successfully completed online course authorized by University of Michigan',
+      skills: ['Python', 'Programming Fundamentals', 'Getting Started', 'Coursera Verified'],
+      link: 'https://coursera.org/verify/GM1JCLV1XTJO'
     },
     {
-      title: 'Video Editing Certification',
-      issuer: 'Creative Media Institute',
-      date: '2024',
-      type: 'Creative Certification',
-      icon: FaCode,
-      description: 'Professional video editing with Wondershare Filmora and CapCut',
-      skills: ['Video Editing', 'Color Grading', 'Motion Graphics', 'Audio Sync']
-    },
-    {
-      title: 'Prompt Engineering Certification',
-      issuer: 'AI Technology Institute',
-      date: '2024',
+      title: 'Prompt Engineering',
+      issuer: 'SoloLearn',
       type: 'AI Certification',
       icon: FaCertificate,
-      description: 'Advanced prompt engineering techniques for AI applications',
-      skills: ['AI Prompting', 'Language Models', 'AI Integration', 'Chatbot Development']
+      description: 'Professional certification in prompt engineering and AI techniques',
+      skills: ['Prompt Engineering', 'AI', 'Language Models', 'AI Integration'],
+      certificateId: 'CC-2XKUDQIF',
+      link: 'https://www.sololearn.com/certificates/CC-2XKUDQIF'
     },
     {
-      title: 'Arduino Programming Excellence',
-      issuer: 'NUST Engineering Labs',
-      date: '2025',
-      type: 'Technical Achievement',
-      icon: SiArduino,
-      description: 'Excellence in Arduino programming and embedded systems projects',
-      skills: ['C/C++', 'Embedded Systems', 'Sensor Integration', 'Motor Control']
-    },
-    {
-      title: 'NUST Academic Excellence',
-      issuer: 'NUST, Islamabad',
-      date: '2025',
-      type: 'Academic Achievement',
-      icon: FaAward,
-      description: 'Outstanding performance in Electrical Engineering coursework',
-      skills: ['Network Analysis', 'Programming Fundamentals', 'Engineering Drawing', 'Lab Work']
-    },
-    {
-      title: 'Circuit Design & Analysis',
-      issuer: 'NUST Electrical Department',
-      date: '2025',
-      type: 'Engineering Certification',
-      icon: FaCertificate,
-      description: 'Proficiency in circuit design, analysis, and practical implementation',
-      skills: ['Circuit Analysis', 'Power Supply Design', 'Logic Gates', 'Oscilloscope']
+      title: 'Social Media Marketing with AI',
+      issuer: 'SoloLearn',
+      type: 'Marketing Certification',
+      icon: FaCode,
+      description: 'Advanced techniques in social media marketing using AI tools',
+      skills: ['Social Media Marketing', 'AI Tools', 'Content Strategy', 'Marketing Automation'],
+      certificateId: 'CC-BHFUCH0D',
+      link: 'https://www.sololearn.com/certificates/CC-BHFUCH0D'
     }
   ]
 
@@ -131,54 +106,62 @@ const Certificates = () => {
           animate={inView ? "visible" : "hidden"}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {certificates.map((cert, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              whileHover={{ y: -5, scale: 1.02 }}
-              className="bg-[#111] border border-white/5 rounded-2xl p-6 hover:border-violet-500/30 transition-all duration-300 group"
-            >
-              {/* Certificate Header */}
-              <div className="flex items-start justify-between mb-4">
-                <div className="w-12 h-12 bg-violet-500/10 rounded-xl flex items-center justify-center group-hover:bg-violet-500/20 transition-colors">
-                  <cert.icon className="w-6 h-6 text-violet-500" />
-                </div>
-                <div className="text-right">
-                  <span className="text-violet-400 text-sm font-mono">{cert.date}</span>
-                  <div className="text-xs text-gray-500 mt-1">{cert.type}</div>
-                </div>
-              </div>
-
-              {/* Certificate Content */}
-              <div className="mb-4">
-                <h3 className="text-white text-xl font-bold mb-2 group-hover:text-violet-400 transition-colors">
-                  {cert.title}
-                </h3>
-                <p className="text-violet-400 font-semibold mb-2">{cert.issuer}</p>
-                <p className="text-gray-400 text-sm leading-relaxed">{cert.description}</p>
-              </div>
-
-              {/* Skills Tags */}
-              <div className="flex flex-wrap gap-2">
-                {cert.skills.map((skill, skillIndex) => (
-                  <span
-                    key={skillIndex}
-                    className="px-2 py-1 bg-white/5 text-gray-400 text-xs rounded-full border border-white/10"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-
-              {/* Certificate Badge */}
+          {certificates.map((cert, index) => {
+            const IconComponent = cert.icon
+            return (
               <motion.div
-                className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity"
-                whileHover={{ rotate: 15 }}
+                key={index}
+                variants={itemVariants}
+                whileHover={{ y: -5, scale: 1.02 }}
+                className="relative bg-[#111] border border-white/5 rounded-2xl p-6 hover:border-violet-500/30 transition-all duration-300 group cursor-pointer"
+                onClick={() => {
+                  window.open(cert.link, '_blank')
+                }}
               >
-                <FaCertificate className="w-4 h-4 text-violet-500" />
+                {/* Certificate Header */}
+                <div className="flex items-start justify-between mb-4">
+                  <div className="w-12 h-12 bg-violet-500/10 rounded-xl flex items-center justify-center group-hover:bg-violet-500/20 transition-colors">
+                    <IconComponent className="w-6 h-6 text-violet-500" />
+                  </div>
+                  <div className="text-right">
+                    <div className="text-xs text-gray-500">{cert.type}</div>
+                    {cert.certificateId && (
+                      <div className="text-xs text-gray-600 mt-1">ID: {cert.certificateId}</div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Certificate Content */}
+                <div className="mb-4">
+                  <h3 className="text-white text-xl font-bold mb-2 group-hover:text-violet-400 transition-colors">
+                    {cert.title}
+                  </h3>
+                  <p className="text-violet-400 font-semibold mb-2">{cert.issuer}</p>
+                  <p className="text-gray-400 text-sm leading-relaxed">{cert.description}</p>
+                </div>
+
+                {/* Skills Tags */}
+                <div className="flex flex-wrap gap-2">
+                  {cert.skills.map((skill, skillIndex) => (
+                    <span
+                      key={skillIndex}
+                      className="px-2 py-1 bg-white/5 text-gray-400 text-xs rounded-full border border-white/10"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Certificate Badge */}
+                <motion.div
+                  className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity"
+                  whileHover={{ rotate: 15 }}
+                >
+                  <FaCertificate className="w-4 h-4 text-violet-500" />
+                </motion.div>
               </motion.div>
-            </motion.div>
-          ))}
+            )
+          })}
         </motion.div>
 
         {/* Achievement Stats */}
@@ -189,10 +172,10 @@ const Certificates = () => {
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
         >
           {[
-            { number: '6+', label: 'Certifications' },
-            { number: '98%', label: 'Course Completion' },
-            { number: '15+', label: 'Skills Validated' },
-            { number: '2024', label: 'Most Recent' }
+            { number: '3', label: 'Professional Certifications' },
+            { number: '100%', label: 'Course Completion' },
+            { number: '20+', label: 'Skills Validated' },
+            { number: '∞', label: 'Continuous Learning' }
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <motion.div
@@ -208,6 +191,7 @@ const Certificates = () => {
           ))}
         </motion.div>
       </div>
+
     </section>
   )
 }

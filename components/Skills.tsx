@@ -3,15 +3,14 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import {
+  FaCode,
+  FaVideo,
+  FaLayerGroup,
   FaMicrochip,
-  FaBolt,
-  FaCogs,
-  FaSolarPanel,
-  FaTools,
+  FaServer,
 } from 'react-icons/fa'
 import {
   SiArduino,
-  SiRaspberrypi,
   SiPython,
   SiCplusplus,
 } from 'react-icons/si'
@@ -23,15 +22,14 @@ const Skills = () => {
   })
 
   const skills = [
-    { name: 'Arduino Programming', icon: SiArduino, color: '#00979D' },
     { name: 'Python', icon: SiPython, color: '#3776AB' },
-    { name: 'C/C++', icon: SiCplusplus, color: '#00599C' },
-    { name: 'Circuit Design', icon: FaMicrochip, color: '#FFD700' },
-    { name: 'Embedded Systems', icon: FaBolt, color: '#FFA500' },
-    { name: 'Web Development', icon: FaCogs, color: '#9C27B0' },
-    { name: 'Video Editing', icon: FaTools, color: '#34A853' },
-    { name: 'Streamlit', icon: FaSolarPanel, color: '#4CAF50' },
-    { name: 'Git/GitHub', icon: FaCogs, color: '#6f42c1' },
+    { name: 'Video Editing', icon: FaVideo, color: '#E74C3C' },
+    { name: 'Streamlit', icon: FaLayerGroup, color: '#FF4B4B' },
+    { name: 'Circuit Design', icon: FaMicrochip, color: '#F39C12' },
+    { name: 'C', icon: SiCplusplus, color: '#A8B9CC' },
+    { name: 'C++', icon: SiCplusplus, color: '#00599C' },
+    { name: 'Arduino Programming', icon: SiArduino, color: '#00979D' },
+    { name: 'Embedded Systems', icon: FaServer, color: '#3498DB' },
   ]
 
   const containerVariants = {
@@ -57,9 +55,12 @@ const Skills = () => {
     <section id="skills" className="py-20 md:py-32 bg-black relative overflow-hidden">
       {/* Professional Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 opacity-[0.02]">
           <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle, rgba(251, 191, 36, 0.1) 1px, transparent 1px)`,
+            backgroundImage: `
+              linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)
+            `,
             backgroundSize: '50px 50px'
           }} />
         </div>
@@ -72,12 +73,18 @@ const Skills = () => {
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
       >
-        <motion.div variants={itemVariants} className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">
-            Skills & Technologies
+        <motion.div variants={itemVariants} className="mb-12">
+          <span className="text-violet-500 text-sm font-mono tracking-wider">
+            05. TECHNICAL SKILLS
+          </span>
+        </motion.div>
+
+        <motion.div variants={itemVariants} className="mb-16">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight max-w-3xl">
+            Skills &<br />
+            <span className="text-violet-500">Technologies.</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mb-6" />
-          <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto">
+          <p className="text-gray-400 text-lg max-w-2xl leading-relaxed">
             Technical expertise in electrical engineering principles and modern technologies
           </p>
         </motion.div>
@@ -97,7 +104,7 @@ const Skills = () => {
                   rotate: [0, -5, 5, 0],
                   transition: { duration: 0.3 },
                 }}
-                className="bg-slate-900/70 backdrop-blur-md rounded-2xl p-6 md:p-8 shadow-lg border border-slate-700 hover:border-amber-500/70 transition-all group cursor-pointer"
+                className="bg-[#111] backdrop-blur-md rounded-2xl p-6 md:p-8 shadow-lg border border-white/5 hover:border-violet-500/50 transition-all group cursor-pointer"
               >
                 <div className="flex flex-col items-center space-y-4">
                   <motion.div
@@ -115,12 +122,12 @@ const Skills = () => {
 
                 {/* Skill level indicator */}
                 <motion.div
-                  className="mt-4 w-full bg-slate-700 rounded-full h-2 overflow-hidden"
+                  className="mt-4 w-full bg-white/5 rounded-full h-2 overflow-hidden"
                   initial={{ opacity: 0 }}
                   whileHover={{ opacity: 1 }}
                 >
                   <motion.div
-                    className="h-full bg-gradient-to-r from-amber-500 to-orange-500 rounded-full"
+                    className="h-full bg-gradient-to-r from-violet-500 to-violet-600 rounded-full"
                     initial={{ width: 0 }}
                     whileInView={{ width: `${85 + Math.random() * 15}%` }}
                     transition={{ duration: 1, delay: index * 0.05 }}
@@ -138,31 +145,31 @@ const Skills = () => {
         >
           {[
             {
-              title: 'Core Engineering',
-              items: ['Circuit Analysis', 'Digital Electronics', 'Signal Processing', 'Electromagnetic Theory'],
+              title: 'First Year Engineering',
+              items: ['Basic Circuit Analysis', 'Digital Logic Design', 'Programming Fundamentals', 'Engineering Drawing'],
             },
             {
-              title: 'Specialized Areas',
-              items: ['Power Distribution', 'Motor Control', 'IoT Systems', 'Smart Grids'],
+              title: 'Hands-On Projects',
+              items: ['Arduino Programming', 'Basic Motor Control', 'Sensor Integration', 'Power Supply Design'],
             },
             {
-              title: 'Tools & Software',
-              items: ['MATLAB/Simulink', 'Proteus', 'LTspice', 'Eagle PCB'],
+              title: 'Software & Tools',
+              items: ['Python', 'C/C++', 'Git/GitHub', 'Streamlit'],
             },
           ].map((category) => (
             <motion.div
               key={category.title}
-              className="bg-slate-900/70 backdrop-blur-md rounded-2xl p-8 border border-slate-700"
-              whileHover={{ y: -10, borderColor: 'rgba(251, 191, 36, 0.7)' }}
+              className="bg-[#111] backdrop-blur-md rounded-2xl p-8 border border-white/5"
+              whileHover={{ y: -10, borderColor: 'rgba(139, 92, 246, 0.5)' }}
               transition={{ duration: 0.3 }}
             >
-              <h3 className="text-xl font-bold mb-4 text-amber-400">
+              <h3 className="text-xl font-bold mb-4 text-violet-400">
                 {category.title}
               </h3>
               <ul className="space-y-2">
                 {category.items.map((item) => (
                   <li key={item} className="flex items-center space-x-2">
-                    <span className="w-2 h-2 bg-amber-400 rounded-full" />
+                    <span className="w-2 h-2 bg-violet-400 rounded-full" />
                     <span className="text-gray-200">{item}</span>
                   </li>
                 ))}

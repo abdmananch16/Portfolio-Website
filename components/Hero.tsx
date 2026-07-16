@@ -32,17 +32,21 @@ const Hero = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
               className="mb-8"
             >
               <div className="flex items-center gap-4 mb-4 justify-center lg:justify-start">
                 <span className="text-violet-500 text-sm font-mono tracking-wider">
-                  01. ELECTRICAL ENGINEERING STUDENT
+                  <TypeAnimation
+                    sequence={[
+                      '01. ELECTRICAL ENGINEERING STUDENT AT NUST ISLAMABAD',
+                    ]}
+                    wrapper="span"
+                    speed={50}
+                    repeat={0}
+                    cursor={false}
+                  />
                 </span>
-                <div className="flex items-center gap-2 px-3 py-1 bg-green-500/10 border border-green-500/30 rounded-full">
-                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="text-green-400 text-xs font-mono">Available for Work</span>
-                </div>
               </div>
             </motion.div>
 
@@ -50,159 +54,70 @@ const Hero = () => {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
               className="mb-8"
             >
               <div className="space-y-0">
                 {/* Abdul Line */}
                 <motion.h1 
-                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
-                  initial={{ opacity: 0, x: -100 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ 
-                    delay: 0.5, 
-                    duration: 0.8,
-                    type: "spring",
-                    stiffness: 80
-                  }}
-                  whileHover={{ 
-                    scale: 1.05,
-                    textShadow: "0 0 30px rgba(255, 255, 255, 0.8)"
-                  }}
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight font-mono"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6, duration: 0.8 }}
                 >
                   Abdul
                 </motion.h1>
 
                 {/* Mannan Line */}
                 <motion.h1 
-                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-violet-500 leading-tight"
-                  initial={{ opacity: 0, x: 100 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ 
-                    delay: 0.9, 
-                    duration: 0.8,
-                    type: "spring",
-                    stiffness: 80
-                  }}
-                  whileHover={{ 
-                    scale: 1.05,
-                    textShadow: "0 0 30px rgba(139, 92, 246, 1)"
-                  }}
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-violet-500 leading-tight font-mono"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.8, duration: 0.8 }}
                 >
                   Mannan
                 </motion.h1>
               </div>
 
-              {/* Titles appearing line by line */}
-              <div className="mt-6 space-y-3">
-                {/* Python Developer Line */}
-                <motion.p
-                  className="text-lg sm:text-xl md:text-2xl font-semibold text-violet-400"
-                  initial={{ opacity: 0, x: -100 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ 
-                    delay: 1.3, 
-                    duration: 0.8,
-                    type: "spring",
-                    stiffness: 80
-                  }}
-                  whileHover={{
-                    scale: 1.05,
-                    textShadow: "0 0 20px rgba(139, 92, 246, 0.8)"
-                  }}
-                >
-                  Python Developer
-                </motion.p>
-
-                {/* Circuit Designer Line */}
-                <motion.p
-                  className="text-lg sm:text-xl md:text-2xl font-semibold text-violet-400"
-                  initial={{ opacity: 0, x: -100 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ 
-                    delay: 1.7, 
-                    duration: 0.8,
-                    type: "spring",
-                    stiffness: 80
-                  }}
-                  whileHover={{
-                    scale: 1.05,
-                    textShadow: "0 0 20px rgba(139, 92, 246, 0.8)"
-                  }}
-                >
-                  Circuit Designer
-                </motion.p>
-
-                {/* Electrical Engineering Student Line */}
-                <motion.p
-                  className="text-lg sm:text-xl md:text-2xl font-semibold text-violet-400"
-                  initial={{ opacity: 0, x: -100 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ 
-                    delay: 2.1, 
-                    duration: 0.8,
-                    type: "spring",
-                    stiffness: 80
-                  }}
-                  whileHover={{
-                    scale: 1.05,
-                    textShadow: "0 0 20px rgba(139, 92, 246, 0.8)"
-                  }}
-                >
-                  Electrical Engineering Student
-                </motion.p>
-
-                {/* Circuit Analysis Enthusiast Line */}
-                <motion.p
-                  className="text-lg sm:text-xl md:text-2xl font-semibold text-violet-400"
-                  initial={{ opacity: 0, x: -100 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ 
-                    delay: 2.5, 
-                    duration: 0.8,
-                    type: "spring",
-                    stiffness: 80
-                  }}
-                  whileHover={{
-                    scale: 1.05,
-                    textShadow: "0 0 20px rgba(139, 92, 246, 0.8)"
-                  }}
-                >
-                  Circuit Analysis Enthusiast
-                </motion.p>
-              </div>
+              {/* Single Rotating Title Line with Typewriter Effect */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.2, duration: 0.8 }}
+                className="mt-6"
+              >
+                <div className="text-lg sm:text-xl md:text-2xl font-medium text-gray-300 font-mono min-h-[2.5rem]">
+                  <TypeAnimation
+                    sequence={[
+                      'Electrical Engineering Student',
+                      2000,
+                      'Embedded Systems Enthusiast',
+                      2000,
+                      'Python Developer',
+                      2000,
+                      'Prompt Engineer',
+                      2000,
+                    ]}
+                    wrapper="span"
+                    speed={50}
+                    repeat={Infinity}
+                    style={{ display: 'inline-block' }}
+                  />
+                </div>
+              </motion.div>
             </motion.div>
 
             {/* Description */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9 }}
+              transition={{ delay: 4.0, duration: 0.8 }}
               className="mb-12 text-center lg:text-left"
             >
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.1, duration: 1 }}
-                className="text-2xl sm:text-3xl md:text-4xl font-bold text-violet-400 mb-6"
-              >
-                <motion.p
-                  whileHover={{ scale: 1.02 }}
-                  className="mb-3"
-                >
-                  Electrical Engineering Student
-                </motion.p>
-                <motion.p
-                  whileHover={{ scale: 1.02 }}
-                  className="text-white"
-                >
-                  Circuit Analysis Enthusiast
-                </motion.p>
-              </motion.div>
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 1.3, duration: 1 }}
+                transition={{ delay: 4.2, duration: 1 }}
                 className="text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto lg:mx-0"
               >
                 Specializing in embedded systems, Arduino programming, and Python development. 
@@ -211,58 +126,62 @@ const Hero = () => {
               </motion.p>
             </motion.div>
 
-            {/* CTA Button */}
+            {/* CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.5 }}
-              className="flex items-center gap-6 mb-16 justify-center lg:justify-start"
+              transition={{ delay: 1.2, duration: 0.8 }}
+              className="flex flex-wrap items-center gap-4 mb-16 justify-center lg:justify-start"
             >
-              {/* Hire Me Button */}
+              {/* View My Work Button */}
               <motion.a
-                href="mailto:abdmananch16@gmail.com?subject=Job Opportunity&body=Hi Abdul Mannan, I would like to discuss a job opportunity with you."
-                className="group px-10 py-4 bg-violet-500 hover:bg-violet-600 text-black font-bold rounded-full transition-all flex items-center gap-3 text-lg shadow-xl"
+                href="#projects"
+                className="group px-8 py-3 bg-violet-600 hover:bg-violet-700 text-white font-bold rounded-full transition-all flex items-center gap-3 text-base"
                 whileHover={{ 
                   scale: 1.05,
-                  boxShadow: "0 10px 30px rgba(139, 92, 246, 0.4)"
                 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1.7 }}
+                transition={{ delay: 1.4, duration: 0.8 }}
               >
-                <motion.span
-                  animate={{ 
-                    rotate: [0, 15, -15, 0],
-                  }}
-                  transition={{ 
-                    duration: 2, 
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  className="text-xl"
-                >
-                  📧
-                </motion.span>
-                Hire Me
+                <span className="text-lg">💼</span>
+                View My Work
+              </motion.a>
+
+              {/* Download CV Button */}
+              <motion.a
+                href="/Abdul_Mannan_CV.docx"
+                download="Abdul_Mannan_CV.docx"
+                className="group px-8 py-3 bg-violet-600 hover:bg-violet-700 text-white font-bold rounded-full transition-all flex items-center gap-3 text-base"
+                whileHover={{ 
+                  scale: 1.05,
+                }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1.5, duration: 0.8 }}
+              >
+                <span className="text-lg">📄</span>
+                Download CV
               </motion.a>
 
               {/* Social Icons */}
               <div className="flex items-center gap-4">
                 {[
-                  { icon: FaGithub, href: 'https://github.com', label: 'GitHub' },
+                  { icon: FaGithub, href: 'https://github.com/abdmananch16/Portfolio-Website.git', label: 'GitHub' },
                   { icon: FaLinkedin, href: 'https://linkedin.com/in/abdul-mannan-23a0bb3a5', label: 'LinkedIn' },
                   { icon: FaEnvelope, href: 'mailto:abdmananch16@gmail.com', label: 'Email' },
                 ].map((social, index) => (
                   <motion.a
                     key={index}
                     href={social.href}
-                    className="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-violet-500/20 text-gray-400 hover:text-violet-400 transition-all border border-white/10 hover:border-violet-500/50"
+                    className="w-12 h-12 flex items-center justify-center rounded-full bg-violet-600/20 hover:bg-violet-600 text-violet-400 hover:text-white transition-all border border-violet-500/30"
                     whileHover={{ scale: 1.1, y: -3 }}
                     whileTap={{ scale: 0.9 }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.9 + index * 0.1 }}
+                    transition={{ delay: 1.6 + index * 0.1, duration: 0.8 }}
                     title={social.label}
                   >
                     <social.icon size={20} />
@@ -270,211 +189,312 @@ const Hero = () => {
                 ))}
               </div>
             </motion.div>
-
-            {/* Typing Roles */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 2.2 }}
-              className="text-gray-500 text-lg font-mono text-center lg:text-left"
-            >
-              <motion.div
-                animate={{ 
-                  opacity: [0.6, 1, 0.6],
-                  scale: [1, 1.01, 1],
-                }}
-                transition={{ 
-                  duration: 3, 
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="relative"
-              >
-                <TypeAnimation
-                  sequence={[
-                    'Arduino Programmer',
-                    2000,
-                    'Embedded Systems Developer',
-                    2000,
-                    'Python Developer',
-                    2000,
-                    'Circuit Designer',
-                    2000,
-                    'NUST Engineering Student',
-                    2000,
-                  ]}
-                  wrapper="span"
-                  speed={50}
-                  repeat={Infinity}
-                  className="relative z-10"
-                />
-              </motion.div>
-            </motion.div>
           </motion.div>
         </div>
       </div>
 
-      {/* 3D Animated Background */}
+      {/* Professional Electrical Circuit Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Animated Gradient Spheres */}
-        <motion.div
-          className="absolute top-20 -left-40 w-80 h-80 bg-gradient-to-br from-violet-600/30 to-purple-600/20 rounded-full blur-3xl"
-          animate={{
-            x: [0, 50, 0],
-            y: [0, 30, 0],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        
-        <motion.div
-          className="absolute top-1/2 -right-40 w-80 h-80 bg-gradient-to-br from-blue-600/30 to-cyan-600/20 rounded-full blur-3xl"
-          animate={{
-            x: [0, -50, 0],
-            y: [0, -30, 0],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1,
-          }}
-        />
+        {/* Refined Circuit Grid Base */}
+        <div className="absolute inset-0 opacity-[0.025]">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `
+              linear-gradient(rgba(139, 92, 246, 0.3) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(139, 92, 246, 0.3) 1px, transparent 1px)
+            `,
+            backgroundSize: '100px 100px',
+          }} />
+        </div>
 
-        <motion.div
-          className="absolute bottom-20 left-1/3 w-72 h-72 bg-gradient-to-br from-pink-600/20 to-violet-600/10 rounded-full blur-3xl"
-          animate={{
-            x: [0, 30, 0],
-            y: [0, -40, 0],
-            scale: [1.1, 1, 1.1],
-          }}
-          transition={{
-            duration: 9,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2,
-          }}
-        />
-
-        {/* Animated Grid Lines */}
-        <svg className="absolute inset-0 w-full h-full" opacity="0.1">
+        {/* SVG Circuit Components and Traces */}
+        <svg className="absolute inset-0 w-full h-full opacity-15">
           <defs>
-            <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
-              <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(139, 92, 246, 0.2)" strokeWidth="0.5"/>
-            </pattern>
-            <linearGradient id="gridGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style={{ stopColor: 'rgba(139, 92, 246, 0.3)', stopOpacity: 0.3 }} />
-              <stop offset="100%" style={{ stopColor: 'rgba(168, 85, 247, 0)', stopOpacity: 0 }} />
+            <linearGradient id="traceGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="rgba(139, 92, 246, 0.3)" />
+              <stop offset="50%" stopColor="rgba(139, 92, 246, 0.9)" />
+              <stop offset="100%" stopColor="rgba(139, 92, 246, 0.3)" />
             </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
           </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-          <rect width="100%" height="100%" fill="url(#gridGradient)" />
+
+          {/* MORE RESISTORS */}
+          <g transform="translate(120, 80)">
+            <line x1="0" y1="20" x2="15" y2="20" stroke="url(#traceGrad)" strokeWidth="3"/>
+            <rect x="15" y="12" width="55" height="16" fill="none" stroke="rgba(139, 92, 246, 0.7)" strokeWidth="3" rx="3" filter="url(#glow)"/>
+            <line x1="70" y1="20" x2="100" y2="20" stroke="url(#traceGrad)" strokeWidth="3"/>
+            <circle cx="85" cy="20" r="3" fill="rgba(139, 92, 246, 0.8)">
+              <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+
+          <g transform="translate(1000, 450)">
+            <line x1="0" y1="20" x2="15" y2="20" stroke="url(#traceGrad)" strokeWidth="3"/>
+            <rect x="15" y="12" width="55" height="16" fill="none" stroke="rgba(139, 92, 246, 0.7)" strokeWidth="3" rx="3" filter="url(#glow)"/>
+            <line x1="70" y1="20" x2="100" y2="20" stroke="url(#traceGrad)" strokeWidth="3"/>
+          </g>
+
+          {/* MORE CAPACITORS */}
+          <g transform="translate(350, 150)">
+            <line x1="0" y1="20" x2="18" y2="20" stroke="url(#traceGrad)" strokeWidth="3"/>
+            <line x1="18" y1="4" x2="18" y2="36" stroke="rgba(139, 92, 246, 0.7)" strokeWidth="3.5" filter="url(#glow)"/>
+            <line x1="26" y1="4" x2="26" y2="36" stroke="rgba(139, 92, 246, 0.7)" strokeWidth="3.5" filter="url(#glow)"/>
+            <line x1="26" y1="20" x2="44" y2="20" stroke="url(#traceGrad)" strokeWidth="3"/>
+            <circle cx="33" cy="20" r="3" fill="rgba(139, 92, 246, 0.8)">
+              <animate attributeName="opacity" values="0.5;1;0.5" dur="2.5s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+
+          <g transform="translate(800, 500)">
+            <line x1="0" y1="20" x2="18" y2="20" stroke="url(#traceGrad)" strokeWidth="3"/>
+            <line x1="18" y1="4" x2="18" y2="36" stroke="rgba(139, 92, 246, 0.7)" strokeWidth="3.5" filter="url(#glow)"/>
+            <line x1="26" y1="4" x2="26" y2="36" stroke="rgba(139, 92, 246, 0.7)" strokeWidth="3.5" filter="url(#glow)"/>
+            <line x1="26" y1="20" x2="44" y2="20" stroke="url(#traceGrad)" strokeWidth="3"/>
+          </g>
+
+          {/* LARGER IC CHIPS */}
+          <g transform="translate(600, 120)">
+            <rect x="8" y="8" width="80" height="80" fill="rgba(10, 10, 10, 0.95)" stroke="rgba(139, 92, 246, 0.8)" strokeWidth="3.5" rx="5" filter="url(#glow)"/>
+            {[0, 1, 2, 3, 4, 5].map((i) => (
+              <g key={`ic1pin-${i}`}>
+                <line x1="0" y1={18 + i * 12} x2="8" y2={18 + i * 12} stroke="rgba(139, 92, 246, 0.7)" strokeWidth="3"/>
+                <line x1="88" y1={18 + i * 12} x2="96" y2={18 + i * 12} stroke="rgba(139, 92, 246, 0.7)" strokeWidth="3"/>
+              </g>
+            ))}
+            <circle cx="48" cy="48" r="8" fill="rgba(139, 92, 246, 0.6)">
+              <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <text x="35" y="53" fill="rgba(139, 92, 246, 0.8)" fontSize="10" fontFamily="monospace" fontWeight="bold">IC</text>
+          </g>
+
+          <g transform="translate(200, 350)">
+            <rect x="8" y="8" width="75" height="75" fill="rgba(10, 10, 10, 0.95)" stroke="rgba(139, 92, 246, 0.8)" strokeWidth="3.5" rx="5" filter="url(#glow)"/>
+            {[0, 1, 2, 3, 4].map((i) => (
+              <g key={`ic2pin-${i}`}>
+                <line x1="0" y1={18 + i * 14} x2="8" y2={18 + i * 14} stroke="rgba(139, 92, 246, 0.7)" strokeWidth="3"/>
+                <line x1="83" y1={18 + i * 14} x2="91" y2={18 + i * 14} stroke="rgba(139, 92, 246, 0.7)" strokeWidth="3"/>
+              </g>
+            ))}
+            <circle cx="45" cy="45" r="7" fill="rgba(139, 92, 246, 0.6)">
+              <animate attributeName="opacity" values="0.4;1;0.4" dur="2.8s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+
+          {/* MORE TRANSISTORS */}
+          <g transform="translate(950, 250)">
+            <circle cx="32" cy="32" r="24" fill="none" stroke="rgba(139, 92, 246, 0.7)" strokeWidth="3" filter="url(#glow)"/>
+            <line x1="22" y1="16" x2="22" y2="48" stroke="rgba(139, 92, 246, 0.7)" strokeWidth="3.5"/>
+            <line x1="0" y1="32" x2="22" y2="32" stroke="rgba(139, 92, 246, 0.7)" strokeWidth="3"/>
+            <line x1="22" y1="22" x2="46" y2="8" stroke="rgba(139, 92, 246, 0.7)" strokeWidth="3"/>
+            <line x1="22" y1="42" x2="46" y2="56" stroke="rgba(139, 92, 246, 0.7)" strokeWidth="3"/>
+            <polygon points="40,8 46,8 46,15" fill="rgba(139, 92, 246, 0.7)"/>
+            <circle cx="32" cy="32" r="4" fill="rgba(139, 92, 246, 0.8)">
+              <animate attributeName="opacity" values="0.5;1;0.5" dur="2.2s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+
+          {/* MORE DIODES */}
+          <g transform="translate(500, 420)">
+            <line x1="0" y1="20" x2="12" y2="20" stroke="url(#traceGrad)" strokeWidth="3"/>
+            <polygon points="12,8 12,32 32,20" fill="none" stroke="rgba(139, 92, 246, 0.7)" strokeWidth="3" filter="url(#glow)"/>
+            <line x1="32" y1="8" x2="32" y2="32" stroke="rgba(139, 92, 246, 0.7)" strokeWidth="3.5"/>
+            <line x1="32" y1="20" x2="44" y2="20" stroke="url(#traceGrad)" strokeWidth="3"/>
+            <circle cx="22" cy="20" r="3" fill="rgba(139, 92, 246, 0.8)">
+              <animate attributeName="opacity" values="0.5;1;0.5" dur="2.7s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+
+          {/* MORE INDUCTORS */}
+          <g transform="translate(150, 500)">
+            <line x1="0" y1="20" x2="8" y2="20" stroke="url(#traceGrad)" strokeWidth="3"/>
+            <path d="M 8 20 Q 14 8, 20 20 Q 26 32, 32 20 Q 38 8, 44 20 Q 50 32, 56 20 Q 62 8, 68 20 Q 74 32, 80 20" 
+                  fill="none" stroke="rgba(139, 92, 246, 0.7)" strokeWidth="3" filter="url(#glow)"/>
+            <line x1="80" y1="20" x2="88" y2="20" stroke="url(#traceGrad)" strokeWidth="3"/>
+          </g>
+
+          {/* ADDITIONAL POWER/GROUND SYMBOLS */}
+          <g transform="translate(1100, 150)">
+            <line x1="0" y1="30" x2="0" y2="18" stroke="rgba(139, 92, 246, 0.6)" strokeWidth="3"/>
+            <circle cx="0" cy="12" r="6" fill="rgba(139, 92, 246, 0.6)">
+              <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <text x="10" y="30" fill="rgba(139, 92, 246, 0.6)" fontSize="13" fontFamily="monospace" fontWeight="bold">+5V</text>
+          </g>
+
+          <g transform="translate(450, 580)">
+            <line x1="0" y1="0" x2="0" y2="18" stroke="rgba(139, 92, 246, 0.6)" strokeWidth="3"/>
+            <line x1="-18" y1="18" x2="18" y2="18" stroke="rgba(139, 92, 246, 0.6)" strokeWidth="3"/>
+            <line x1="-12" y1="24" x2="12" y2="24" stroke="rgba(139, 92, 246, 0.6)" strokeWidth="3"/>
+            <line x1="-6" y1="30" x2="6" y2="30" stroke="rgba(139, 92, 246, 0.6)" strokeWidth="3"/>
+            <text x="24" y="22" fill="rgba(139, 92, 246, 0.6)" fontSize="13" fontFamily="monospace" fontWeight="bold">GND</text>
+          </g>
+
+          {/* ENHANCED CONNECTING TRACES WITH FLOW */}
+          <motion.path
+            d="M 220 100 L 350 100 L 350 170"
+            stroke="url(#traceGrad)"
+            strokeWidth="3"
+            fill="none"
+            strokeDasharray="10 5"
+            animate={{ strokeDashoffset: [0, -15] }}
+            transition={{ duration: 2.5, repeat: Infinity, ease: "linear" }}
+          />
+          <motion.path
+            d="M 394 170 L 500 170 L 500 300 L 600 300 L 600 220"
+            stroke="url(#traceGrad)"
+            strokeWidth="3"
+            fill="none"
+            strokeDasharray="10 5"
+            animate={{ strokeDashoffset: [0, -15] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+          />
+          <motion.path
+            d="M 696 200 L 800 200 L 800 420 L 844 420"
+            stroke="url(#traceGrad)"
+            strokeWidth="3"
+            fill="none"
+            strokeDasharray="10 5"
+            animate={{ strokeDashoffset: [0, -15] }}
+            transition={{ duration: 3.5, repeat: Infinity, ease: "linear" }}
+          />
+          <motion.path
+            d="M 544 440 L 600 440 L 600 560 L 950 560 L 950 282"
+            stroke="url(#traceGrad)"
+            strokeWidth="3"
+            fill="none"
+            strokeDasharray="10 5"
+            animate={{ strokeDashoffset: [0, -15] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+          />
+          <motion.path
+            d="M 291 425 L 350 425 L 350 520 L 238 520"
+            stroke="url(#traceGrad)"
+            strokeWidth="3"
+            fill="none"
+            strokeDasharray="10 5"
+            animate={{ strokeDashoffset: [0, -15] }}
+            transition={{ duration: 3.2, repeat: Infinity, ease: "linear" }}
+          />
         </svg>
 
-        {/* Floating Particles */}
-        {Array.from({ length: 15 }).map((_, i) => (
+        {/* Animated Signal Flow Particles */}
+        {[
+          { start: [270, 140], end: [400, 200], delay: 0 },
+          { start: [437, 200], end: [650, 240], delay: 0.8 },
+          { start: [740, 230], end: [887, 440], delay: 1.6 },
+          { start: [580, 460], end: [980, 308], delay: 2.4 },
+          { start: [365, 445], end: [276, 530], delay: 3.2 },
+        ].map((route, i) => (
           <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-violet-400 rounded-full"
+            key={`signal-${i}`}
+            className="absolute w-2 h-2 bg-violet-400/60 rounded-full"
+            style={{
+              left: route.start[0],
+              top: route.start[1],
+            }}
+            animate={{
+              left: [route.start[0], route.end[0]],
+              top: [route.start[1], route.end[1]],
+              opacity: [0, 0.6, 0.6, 0],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              delay: route.delay,
+              ease: "easeInOut",
+            }}
+          />
+        ))}
+
+        {/* Refined Floating Particles */}
+        {Array.from({ length: 20 }).map((_, i) => (
+          <motion.div
+            key={`particle-${i}`}
+            className="absolute w-1 h-1 bg-violet-400/30 rounded-full"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
             }}
             animate={{
-              y: [0, -200, 0],
-              opacity: [0, 0.8, 0],
-              scale: [0, 1, 0],
+              y: [0, -120 - Math.random() * 80],
+              opacity: [0, 0.5, 0],
             }}
             transition={{
-              duration: 4 + Math.random() * 3,
+              duration: 12 + Math.random() * 6,
               repeat: Infinity,
-              delay: Math.random() * 2,
-              ease: "easeInOut",
+              delay: Math.random() * 5,
+              ease: "easeOut",
             }}
           />
         ))}
 
-        {/* Light Rays */}
+        {/* Sophisticated Gradient Orbs */}
         <motion.div
-          className="absolute top-0 left-1/4 w-1 h-full bg-gradient-to-b from-violet-400/50 to-transparent opacity-30"
+          className="absolute top-1/4 right-1/4 w-[900px] h-[900px] rounded-full opacity-[0.06]"
+          style={{
+            background: 'radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, transparent 70%)',
+          }}
           animate={{
-            opacity: [0.3, 0.6, 0.3],
-            filter: ["blur(0px)", "blur(10px)", "blur(0px)"],
+            scale: [1, 1.1, 1],
+            opacity: [0.06, 0.09, 0.06],
           }}
           transition={{
-            duration: 6,
+            duration: 12,
             repeat: Infinity,
             ease: "easeInOut",
           }}
         />
 
         <motion.div
-          className="absolute top-0 right-1/4 w-1 h-full bg-gradient-to-b from-blue-400/50 to-transparent opacity-30"
+          className="absolute bottom-1/4 left-1/4 w-[900px] h-[900px] rounded-full opacity-[0.06]"
+          style={{
+            background: 'radial-gradient(circle, rgba(59, 130, 246, 0.4) 0%, transparent 70%)',
+          }}
           animate={{
-            opacity: [0.3, 0.6, 0.3],
-            filter: ["blur(0px)", "blur(10px)", "blur(0px)"],
+            scale: [1, 1.1, 1],
+            opacity: [0.06, 0.09, 0.06],
           }}
           transition={{
-            duration: 6,
+            duration: 14,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: 1,
+            delay: 3,
           }}
         />
 
-        {/* 3D Cube Effect Boxes */}
-        {Array.from({ length: 8 }).map((_, i) => (
-          <motion.div
-            key={`cube-${i}`}
-            className="absolute border border-violet-500/20 rounded-lg"
-            style={{
-              width: 60 + i * 20,
-              height: 60 + i * 20,
-              left: `${10 + i * 10}%`,
-              top: `${20 + (i % 3) * 20}%`,
-            }}
-            animate={{
-              rotateX: [0, 360],
-              rotateY: [0, 360],
-              rotateZ: [0, 360],
-              opacity: [0.1, 0.3, 0.1],
-            }}
-            transition={{
-              duration: 15 + i * 2,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          />
-        ))}
+        {/* Elegant Corner Accents */}
+        <motion.div 
+          className="absolute top-0 left-0 w-32 h-32 border-l border-t border-violet-500/15"
+          animate={{ opacity: [0.15, 0.3, 0.15] }}
+          transition={{ duration: 4, repeat: Infinity }}
+        />
+        <motion.div 
+          className="absolute top-0 right-0 w-32 h-32 border-r border-t border-violet-500/15"
+          animate={{ opacity: [0.15, 0.3, 0.15] }}
+          transition={{ duration: 4, repeat: Infinity, delay: 1 }}
+        />
+        <motion.div 
+          className="absolute bottom-0 left-0 w-32 h-32 border-l border-b border-violet-500/15"
+          animate={{ opacity: [0.15, 0.3, 0.15] }}
+          transition={{ duration: 4, repeat: Infinity, delay: 2 }}
+        />
+        <motion.div 
+          className="absolute bottom-0 right-0 w-32 h-32 border-r border-b border-violet-500/15"
+          animate={{ opacity: [0.15, 0.3, 0.15] }}
+          transition={{ duration: 4, repeat: Infinity, delay: 3 }}
+        />
 
-        {/* Pulsing Orbs */}
-        {Array.from({ length: 4 }).map((_, i) => (
-          <motion.div
-            key={`orb-${i}`}
-            className="absolute rounded-full border border-violet-400/30"
-            style={{
-              width: 100 + i * 50,
-              height: 100 + i * 50,
-              left: `${25 + i * 15}%`,
-              top: `${30 + i * 10}%`,
-            }}
-            animate={{
-              scale: [1, 1.1, 1],
-              opacity: [0.2, 0.4, 0.2],
-            }}
-            transition={{
-              duration: 4 + i,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: i * 0.5,
-            }}
-          />
-        ))}
+        {/* Refined Scan Line */}
+        <motion.div
+          className="absolute left-0 w-full h-px bg-gradient-to-r from-transparent via-violet-500/15 to-transparent"
+          animate={{ top: ['0%', '100%'] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        />
       </div>
 
       {/* Scroll Indicator */}

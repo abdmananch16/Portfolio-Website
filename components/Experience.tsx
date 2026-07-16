@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import CircuitBackground from './CircuitBackground'
 
 const Experience = () => {
   const [ref, inView] = useInView({
@@ -12,51 +13,43 @@ const Experience = () => {
   const experiences = [
     {
       period: '2024',
-      title: 'Electrical Engineering Intern',
-      company: 'Power Systems Corporation',
-      description: 'Working on power distribution systems and renewable energy integration projects.',
+      title: 'Arduino Smart Car Project',
+      company: 'NUST Electrical Engineering',
+      description: 'Designed and built a Bluetooth-controlled autonomous vehicle with real-time sensor integration.',
       achievements: [
-        'Designed and tested solar power integration circuits',
-        'Conducted power flow analysis for distribution networks',
-        'Assisted in smart grid monitoring system development',
+        'Developed C/C++ code for Arduino microcontroller with wireless communication',
+        'Integrated ultrasonic and IR sensors for obstacle detection and navigation',
+        'Assembled and tested complete hardware setup with motor controls and power management',
       ],
     },
     {
-      period: '2023',
-      title: 'Research Assistant',
-      company: 'University Electrical Lab',
-      description: 'Collaborated on embedded systems and IoT applications research.',
+      period: '2024',
+      title: '5V Regulated Power Supply Design',
+      company: 'NUST Electrical Engineering Lab',
+      description: 'Designed and implemented a regulated power supply with comprehensive circuit analysis.',
       achievements: [
-        'Developed Arduino-based automation systems',
-        'Published research paper on energy optimization',
-        'Designed PCB layouts for laboratory equipment',
+        'Analyzed transformer specifications and rectification circuits',
+        'Implemented voltage regulation using IC 7805 with filtering components',
+        'Conducted load testing and measured voltage stability across different current ranges',
       ],
     },
     {
-      period: '2022',
-      title: 'Student Engineer',
-      company: 'Campus Innovation Center',
-      description: 'Engineering design competitions and sustainable energy projects.',
+      period: '2023 - 2024',
+      title: 'Digital Logic Circuits & LDR Lighting System',
+      company: 'NUST First Year Projects',
+      description: 'Hands-on laboratory work with digital electronics and sensor-based automation.',
       achievements: [
-        'Won 1st place in Circuit Design Competition',
-        'Built autonomous line-following robot',
-        'Mentored junior students in electronics',
+        'Mastered logic gates, combinational and sequential circuits through practical implementation',
+        'Designed and built LDR-based automatic lighting system with switching circuits',
+        'Applied Ohm\'s law, Kirchhoff\'s theorems, and network analysis techniques to real circuits',
       ],
     },
   ]
 
   return (
     <section id="experience" className="py-20 md:py-32 bg-[#0a0a0a] relative overflow-hidden">
-      {/* Grid Background */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `
-            linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)
-          `,
-          backgroundSize: '50px 50px',
-        }} />
-      </div>
+      {/* Circuit Background */}
+      <CircuitBackground />
 
       <motion.div
         ref={ref}
@@ -89,46 +82,75 @@ const Experience = () => {
         </motion.h2>
 
         {/* Timeline */}
-        <div className="space-y-8">
+        <div className="space-y-12">
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: -50 }}
-              animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.1 * index }}
+              initial={{ opacity: 0, y: 40 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.3 * index, ease: "easeOut" }}
               className="group"
             >
-              <div className="grid md:grid-cols-12 gap-8">
-                {/* Period */}
-                <div className="md:col-span-2">
-                  <div className="text-violet-500 font-mono text-sm">{exp.period}</div>
-                </div>
-
+              <div className="grid md:grid-cols-12 gap-8 items-start">
                 {/* Content */}
-                <div className="md:col-span-10">
-                  <div className="bg-[#111] border border-white/5 rounded-2xl p-8 hover:border-violet-500/30 transition-all">
-                    <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-violet-500 transition-colors">
+                <motion.div 
+                  className="md:col-span-12"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={inView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 0.3 * index + 0.1 }}
+                >
+                  <div className="bg-gradient-to-r from-[#111] to-[#0a0a0a] border border-white/5 hover:border-violet-500/50 rounded-2xl p-8 transition-all duration-300 group hover:shadow-lg hover:shadow-violet-500/10">
+                    <motion.h3 
+                      className="text-2xl font-bold text-white mb-2 group-hover:text-violet-400 transition-colors"
+                      initial={{ opacity: 0 }}
+                      animate={inView ? { opacity: 1 } : {}}
+                      transition={{ duration: 0.6, delay: 0.3 * index + 0.2 }}
+                    >
                       {exp.title}
-                    </h3>
-                    <div className="text-gray-400 mb-4">{exp.company}</div>
-                    <p className="text-gray-500 mb-6">{exp.description}</p>
+                    </motion.h3>
+                    
+                    <motion.div 
+                      className="text-violet-500 font-semibold mb-3 text-sm"
+                      initial={{ opacity: 0 }}
+                      animate={inView ? { opacity: 1 } : {}}
+                      transition={{ duration: 0.6, delay: 0.3 * index + 0.25 }}
+                    >
+                      {exp.company}
+                    </motion.div>
+                    
+                    <motion.p 
+                      className="text-gray-400 mb-6 leading-relaxed"
+                      initial={{ opacity: 0 }}
+                      animate={inView ? { opacity: 1 } : {}}
+                      transition={{ duration: 0.6, delay: 0.3 * index + 0.3 }}
+                    >
+                      {exp.description}
+                    </motion.p>
 
-                    <div className="space-y-3">
+                    <motion.div 
+                      className="space-y-3 pt-4 border-t border-white/5"
+                      initial={{ opacity: 0 }}
+                      animate={inView ? { opacity: 1 } : {}}
+                      transition={{ duration: 0.6, delay: 0.3 * index + 0.35 }}
+                    >
                       {exp.achievements.map((achievement, idx) => (
                         <motion.div
                           key={idx}
                           initial={{ opacity: 0, x: -20 }}
                           animate={inView ? { opacity: 1, x: 0 } : {}}
-                          transition={{ delay: 0.3 + index * 0.1 + idx * 0.1 }}
-                          className="flex items-start gap-3"
+                          transition={{ duration: 0.5, delay: 0.3 * index + 0.4 + idx * 0.1 }}
+                          className="flex items-start gap-3 group/item"
                         >
-                          <div className="w-1.5 h-1.5 rounded-full bg-violet-500 mt-2 flex-shrink-0" />
-                          <span className="text-gray-400 text-sm">{achievement}</span>
+                          <motion.div 
+                            className="w-2 h-2 rounded-full bg-violet-500 mt-2 flex-shrink-0"
+                            whileHover={{ scale: 1.5 }}
+                          />
+                          <span className="text-gray-300 text-sm group-hover/item:text-white transition-colors">{achievement}</span>
                         </motion.div>
                       ))}
-                    </div>
+                    </motion.div>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </motion.div>
           ))}

@@ -2,7 +2,9 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import Link from 'next/link'
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
+import CircuitBackground from './CircuitBackground'
 
 const Projects = () => {
   const [ref, inView] = useInView({
@@ -15,22 +17,20 @@ const Projects = () => {
       title: 'Bluetooth-Controlled Arduino Car',
       description: 'Remote-controlled car using Arduino Uno, HC-05 Bluetooth module, and L298N motor driver with Android app interface for wireless control.',
       tags: ['Arduino', 'Bluetooth HC-05', 'L298N Driver', 'Android App', 'C/C++'],
-      github: '#',
-      live: '#',
+      live: 'https://www.linkedin.com/posts/abdul-mannan-23a0bb3a5_arduino-electricalengineering-embeddedsystems-ugcPost-7477583637329338368-KEjn/?utm_source=share&utm_medium=member_desktop',
+      projectPage: '/projects/arduino-car',
     },
     {
       title: 'AWAAZ360 Pro - Pakistan Civic Platform',
       description: 'Full-stack civic utility platform featuring complaint filing with AI duplicate detection, fuel price tracking, electricity bill calculator, and civic chatbot.',
       tags: ['Python', 'Streamlit', 'Web Scraping', 'AI', 'Vercel Deployment'],
-      github: '#',
-      live: 'https://final-awaaz.vercel.app',
+      live: 'https://www.linkedin.com/posts/abdul-mannan-23a0bb3a5_civictech-pakistan-nust-ugcPost-7475461478507278337-sBkj/?utm_source=share&utm_medium=member_desktop',
     },
     {
       title: '5V DC Regulated Power Supply',
       description: 'Complete power supply design using step-down transformer, bridge rectifier, filter capacitor, and 7805 voltage regulator with oscilloscope testing.',
       tags: ['Power Electronics', 'Voltage Regulation', '7805 IC', 'Circuit Design'],
-      github: '#',
-      live: '#',
+      live: 'https://www.linkedin.com/posts/abdul-mannan-23a0bb3a5_electricalengineering-studentproject-circuitdesign-ugcPost-7428826686483353602-2K-C/?utm_source=share&utm_medium=member_desktop',
     },
     {
       title: 'Python Task Automation Script',
@@ -40,33 +40,17 @@ const Projects = () => {
       live: '#',
     },
     {
-      title: 'Logic Gates Implementation',
-      description: 'AND/OR logic gates constructed on breadboard using 74LS08 and 74LS32 TTL ICs, with Boolean algebra simplification and timing analysis.',
-      tags: ['Digital Logic', '74LS Series', 'Boolean Algebra', 'Karnaugh Maps'],
-      github: '#',
-      live: '#',
-    },
-    {
-      title: 'LDR-Based Automatic Night Sensor',
-      description: 'Light-sensing circuit for automatic lamp control using LDR voltage divider and BC547 transistor switch with relay module for AC loads.',
-      tags: ['LDR Sensor', 'BC547 Transistor', 'Relay Control', 'Automatic Control'],
-      github: '#',
-      live: '#',
+      title: 'Logic Gates Implementation (OR Gate)',
+      description: 'OR logic gate constructed on breadboard using 74LS32 TTL IC, with Boolean algebra simplification and timing analysis.',
+      tags: ['Digital Logic', '74LS Series', 'Boolean Algebra', 'OR Gate'],
+      live: 'https://www.linkedin.com/posts/abdul-mannan-23a0bb3a5_electricalengineering-digitallogic-electronics-ugcPost-7430035097648668672-4Dy4/?utm_source=share&utm_medium=member_desktop',
     },
   ]
 
   return (
     <section id="projects" className="py-20 md:py-32 bg-black relative overflow-hidden">
-      {/* Subtle Grid */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `
-            linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)
-          `,
-          backgroundSize: '50px 50px',
-        }} />
-      </div>
+      {/* Circuit Background */}
+      <CircuitBackground />
 
       <motion.div
         ref={ref}
@@ -114,27 +98,39 @@ const Projects = () => {
                     {String(index + 1).padStart(2, '0')}
                   </div>
                   <div className="flex gap-2">
-                    <motion.a
-                      href={project.github}
-                      className="w-8 h-8 flex items-center justify-center rounded-lg bg-white/5 hover:bg-violet-500 hover:text-black text-gray-400 transition-all"
-                      whileHover={{ scale: 1.1, rotate: 360 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <FaGithub size={16} />
-                    </motion.a>
-                    <motion.a
-                      href={project.live}
-                      className="w-8 h-8 flex items-center justify-center rounded-lg bg-white/5 hover:bg-violet-500 hover:text-black text-gray-400 transition-all"
-                      whileHover={{ scale: 1.1, rotate: 360 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <FaExternalLinkAlt size={14} />
-                    </motion.a>
+                    {project.github && (
+                      <motion.a
+                        href={project.github}
+                        className="w-8 h-8 flex items-center justify-center rounded-lg bg-violet-600/20 hover:bg-violet-600 text-violet-400 hover:text-white transition-all"
+                        whileHover={{ scale: 1.1, rotate: 360 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <FaGithub size={16} />
+                      </motion.a>
+                    )}
+                    {project.live && (
+                      <motion.a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-8 h-8 flex items-center justify-center rounded-lg bg-violet-600/20 hover:bg-violet-600 text-violet-400 hover:text-white transition-all"
+                        whileHover={{ scale: 1.1, rotate: 360 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <FaExternalLinkAlt size={14} />
+                      </motion.a>
+                    )}
                   </div>
                 </div>
 
                 <h3 className="text-xl font-bold text-white mb-3 group-hover:text-violet-500 transition-colors">
-                  {project.title}
+                  {project.projectPage ? (
+                    <Link href={project.projectPage} className="hover:underline">
+                      {project.title}
+                    </Link>
+                  ) : (
+                    project.title
+                  )}
                 </h3>
                 <p className="text-gray-400 text-sm leading-relaxed">
                   {project.description}
@@ -167,7 +163,7 @@ const Projects = () => {
         >
           <motion.a
             href="#"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-white/5 hover:bg-violet-500 text-white hover:text-black font-semibold rounded-full transition-all border border-white/10 hover:border-violet-500"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-violet-600 hover:bg-violet-700 text-white font-semibold rounded-full transition-all"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import CircuitBackground from './CircuitBackground'
 
 const About = () => {
   const [ref, inView] = useInView({
@@ -10,24 +11,15 @@ const About = () => {
   })
 
   const stats = [
-    { number: '25+', label: 'Projects Completed' },
-    { number: '3.8', label: 'GPA' },
+    { number: '5', label: 'Projects Completed' },
     { number: '10+', label: 'Technical Skills' },
     { number: '100%', label: 'Dedication' },
   ]
 
   return (
     <section id="about" className="py-20 md:py-32 bg-[#0a0a0a] relative overflow-hidden">
-      {/* Subtle Grid Background */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `
-            linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)
-          `,
-          backgroundSize: '50px 50px',
-        }} />
-      </div>
+      {/* Circuit Background */}
+      <CircuitBackground />
 
       <motion.div
         ref={ref}
@@ -107,6 +99,16 @@ const About = () => {
                 initial={{ opacity: 0 }}
                 animate={inView ? { opacity: 1 } : {}}
                 transition={{ delay: 1.3, duration: 1 }}
+              >
+                First-year achievements include developing a Bluetooth-controlled Arduino car with real-time sensor integration, 
+                designing and implementing a 5V regulated power supply with PCB layouts, and mastering digital logic circuits through 
+                hands-on laboratory experimentation. Demonstrated proficiency in circuit analysis using Ohm&apos;s law, Kirchhoff&apos;s theorems, 
+                and network reduction techniques across multiple AC/DC circuits.
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={inView ? { opacity: 1 } : {}}
+                transition={{ delay: 1.5, duration: 1 }}
               >
                 Experienced in Arduino programming (C/C++), circuit design, Python development, and web scraping. 
                 Skilled in tools like Git/GitHub, Streamlit, and Vercel for cloud deployment. Also proficient 
