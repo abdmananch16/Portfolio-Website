@@ -91,32 +91,85 @@ const Hero = () => {
                 >
                   Mannan
                 </motion.h1>
+              </div>
 
-                {/* Three Titles - Right after name */}
-                <motion.div
-                  className="mt-4 flex flex-wrap gap-2 items-center"
+              {/* Titles appearing line by line */}
+              <div className="mt-6 space-y-3">
+                {/* Python Developer Line */}
+                <motion.p
+                  className="text-lg sm:text-xl md:text-2xl font-semibold text-violet-400"
+                  initial={{ opacity: 0, x: -100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ 
+                    delay: 1.3, 
+                    duration: 0.8,
+                    type: "spring",
+                    stiffness: 80
+                  }}
+                  whileHover={{
+                    scale: 1.05,
+                    textShadow: "0 0 20px rgba(139, 92, 246, 0.8)"
+                  }}
                 >
-                  {['Python Developer', 'Circuit Designer', 'Electrical Engineering Student'].map((title, index) => (
-                    <motion.span
-                      key={index}
-                      initial={{ opacity: 0, x: -50 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ 
-                        delay: 1.3 + index * 0.2, 
-                        duration: 0.6,
-                        type: "spring",
-                        stiffness: 80
-                      }}
-                      whileHover={{
-                        scale: 1.08,
-                        boxShadow: "0 0 20px rgba(139, 92, 246, 0.4)"
-                      }}
-                      className="px-3 py-1 rounded-full border border-violet-400/50 text-xs sm:text-sm text-violet-400 font-semibold bg-violet-500/5"
-                    >
-                      {title}
-                    </motion.span>
-                  ))}
-                </motion.div>
+                  Python Developer
+                </motion.p>
+
+                {/* Circuit Designer Line */}
+                <motion.p
+                  className="text-lg sm:text-xl md:text-2xl font-semibold text-violet-400"
+                  initial={{ opacity: 0, x: -100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ 
+                    delay: 1.7, 
+                    duration: 0.8,
+                    type: "spring",
+                    stiffness: 80
+                  }}
+                  whileHover={{
+                    scale: 1.05,
+                    textShadow: "0 0 20px rgba(139, 92, 246, 0.8)"
+                  }}
+                >
+                  Circuit Designer
+                </motion.p>
+
+                {/* Electrical Engineering Student Line */}
+                <motion.p
+                  className="text-lg sm:text-xl md:text-2xl font-semibold text-violet-400"
+                  initial={{ opacity: 0, x: -100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ 
+                    delay: 2.1, 
+                    duration: 0.8,
+                    type: "spring",
+                    stiffness: 80
+                  }}
+                  whileHover={{
+                    scale: 1.05,
+                    textShadow: "0 0 20px rgba(139, 92, 246, 0.8)"
+                  }}
+                >
+                  Electrical Engineering Student
+                </motion.p>
+
+                {/* Circuit Analysis Enthusiast Line */}
+                <motion.p
+                  className="text-lg sm:text-xl md:text-2xl font-semibold text-violet-400"
+                  initial={{ opacity: 0, x: -100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ 
+                    delay: 2.5, 
+                    duration: 0.8,
+                    type: "spring",
+                    stiffness: 80
+                  }}
+                  whileHover={{
+                    scale: 1.05,
+                    textShadow: "0 0 20px rgba(139, 92, 246, 0.8)"
+                  }}
+                >
+                  Circuit Analysis Enthusiast
+                </motion.p>
               </div>
             </motion.div>
 
