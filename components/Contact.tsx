@@ -64,8 +64,8 @@ const Contact = () => {
             <div className="space-y-6 mb-12">
               {[
                 { icon: FaEnvelope, text: 'abdmananch16@gmail.com', href: 'mailto:abdmananch16@gmail.com' },
-                { icon: FaPhone, text: '+1 (555) 123-4567', href: 'tel:+15551234567' },
-                { icon: FaMapMarkerAlt, text: 'Your City, Country', href: '#' },
+                { icon: FaPhone, text: '0339-4198091', href: 'tel:+923394198091' },
+                { icon: FaMapMarkerAlt, text: 'NUST, Islamabad, Pakistan', href: '#' },
               ].map((item, index) => (
                 <motion.a
                   key={index}

@@ -72,7 +72,6 @@ const Hero = () => {
               </h1>
             </motion.div>
 
-            {/* Description */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -85,10 +84,11 @@ const Hero = () => {
                 transition={{ delay: 1.1, duration: 1 }}
                 className="text-violet-400 font-semibold block mb-2"
               >
-                Electrical Engineering Student
+                Electrical Engineering Student - NUST, Islamabad
               </motion.span>
-              Specializing in circuit design, Arduino projects, and Python applications. 
-              Creating innovative hardware and software solutions for real-world challenges.
+              Specializing in embedded systems, Arduino programming, and Python development. 
+              Creating innovative hardware and software solutions with expertise in circuit design, 
+              automation, and web development.
             </motion.p>
 
             {/* CTA Button */}
@@ -116,7 +116,7 @@ const Hero = () => {
               <div className="flex items-center gap-3">
                 {[
                   { icon: FaGithub, href: 'https://github.com', label: 'GitHub' },
-                  { icon: FaLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+                  { icon: FaLinkedin, href: 'https://linkedin.com/in/abdul-mannan-23a0bb3a5', label: 'LinkedIn' },
                   { icon: FaEnvelope, href: 'mailto:abdmananch16@gmail.com', label: 'Email' },
                 ].map((social, index) => (
                   <motion.a
@@ -142,13 +142,15 @@ const Hero = () => {
             >
               <TypeAnimation
                 sequence={[
-                  'Circuit Analysis Enthusiast',
+                  'Embedded Systems Developer',
                   2000,
-                  'Electronics Explorer',
+                  'Arduino Programmer', 
                   2000,
                   'Python Developer',
                   2000,
-                  'Lifelong Learner',
+                  'Circuit Designer',
+                  2000,
+                  'NUST Engineering Student',
                   2000,
                 ]}
                 wrapper="span"

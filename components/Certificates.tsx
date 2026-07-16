@@ -13,58 +13,58 @@ const Certificates = () => {
 
   const certificates = [
     {
-      title: 'Arduino Programming Certification',
-      issuer: 'Arduino Foundation',
-      date: '2024',
-      type: 'Technical Certification',
-      icon: SiArduino,
-      description: 'Advanced microcontroller programming and IoT development',
-      skills: ['C/C++', 'Embedded Systems', 'Sensor Integration', 'IoT Protocols']
-    },
-    {
-      title: 'Python for Engineers',
-      issuer: 'IEEE Computer Society',
+      title: 'Python Programming Certification',
+      issuer: 'Programming Institute',
       date: '2024',
       type: 'Programming Certification',
       icon: SiPython,
-      description: 'Advanced Python programming for engineering applications',
-      skills: ['Data Analysis', 'Automation', 'GUI Development', 'Scientific Computing']
+      description: 'Advanced Python programming for automation and web development',
+      skills: ['Python', 'Web Scraping', 'Automation', 'Streamlit', 'File Handling']
     },
     {
-      title: 'Circuit Analysis & Design',
-      issuer: 'National Engineering Council',
-      date: '2023',
+      title: 'Video Editing Certification',
+      issuer: 'Creative Media Institute',
+      date: '2024',
+      type: 'Creative Certification',
+      icon: FaCode,
+      description: 'Professional video editing with Wondershare Filmora and CapCut',
+      skills: ['Video Editing', 'Color Grading', 'Motion Graphics', 'Audio Sync']
+    },
+    {
+      title: 'Prompt Engineering Certification',
+      issuer: 'AI Technology Institute',
+      date: '2024',
+      type: 'AI Certification',
+      icon: FaCertificate,
+      description: 'Advanced prompt engineering techniques for AI applications',
+      skills: ['AI Prompting', 'Language Models', 'AI Integration', 'Chatbot Development']
+    },
+    {
+      title: 'Arduino Programming Excellence',
+      issuer: 'NUST Engineering Labs',
+      date: '2025',
+      type: 'Technical Achievement',
+      icon: SiArduino,
+      description: 'Excellence in Arduino programming and embedded systems projects',
+      skills: ['C/C++', 'Embedded Systems', 'Sensor Integration', 'Motor Control']
+    },
+    {
+      title: 'NUST Academic Excellence',
+      issuer: 'NUST, Islamabad',
+      date: '2025',
+      type: 'Academic Achievement',
+      icon: FaAward,
+      description: 'Outstanding performance in Electrical Engineering coursework',
+      skills: ['Network Analysis', 'Programming Fundamentals', 'Engineering Drawing', 'Lab Work']
+    },
+    {
+      title: 'Circuit Design & Analysis',
+      issuer: 'NUST Electrical Department',
+      date: '2025',
       type: 'Engineering Certification',
       icon: FaCertificate,
-      description: 'Advanced circuit analysis and electronic design principles',
-      skills: ['AC/DC Analysis', 'Filter Design', 'Amplifier Circuits', 'PCB Layout']
-    },
-    {
-      title: 'MATLAB Fundamentals',
-      issuer: 'MathWorks',
-      date: '2023',
-      type: 'Software Certification',
-      icon: FaCode,
-      description: 'Signal processing and mathematical modeling certification',
-      skills: ['Signal Processing', 'Control Systems', 'Data Visualization', 'Simulink']
-    },
-    {
-      title: 'AutoCAD Electrical',
-      issuer: 'Autodesk',
-      date: '2023',
-      type: 'Design Certification',
-      icon: SiAutodesk,
-      description: 'Electrical schematic design and documentation',
-      skills: ['Schematic Design', 'Panel Layout', 'Wire Numbering', 'Reports Generation']
-    },
-    {
-      title: 'Dean&apos;s List Achievement',
-      issuer: 'University of Engineering',
-      date: '2023-2024',
-      type: 'Academic Excellence',
-      icon: FaAward,
-      description: 'Outstanding academic performance in electrical engineering',
-      skills: ['Academic Excellence', 'Research Skills', 'Project Management', 'Leadership']
+      description: 'Proficiency in circuit design, analysis, and practical implementation',
+      skills: ['Circuit Analysis', 'Power Supply Design', 'Logic Gates', 'Oscilloscope']
     }
   ]
 

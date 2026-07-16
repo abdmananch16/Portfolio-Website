@@ -23,15 +23,15 @@ const Skills = () => {
   })
 
   const skills = [
-    { name: 'Circuit Design', icon: FaMicrochip, color: '#FFD700' },
-    { name: 'Power Systems', icon: FaBolt, color: '#FFA500' },
-    { name: 'Arduino', icon: SiArduino, color: '#00979D' },
-    { name: 'Raspberry Pi', icon: SiRaspberrypi, color: '#C51A4A' },
+    { name: 'Arduino Programming', icon: SiArduino, color: '#00979D' },
     { name: 'Python', icon: SiPython, color: '#3776AB' },
     { name: 'C/C++', icon: SiCplusplus, color: '#00599C' },
-    { name: 'PCB Design', icon: FaTools, color: '#34A853' },
-    { name: 'Renewable Energy', icon: FaSolarPanel, color: '#4CAF50' },
-    { name: 'Control Systems', icon: FaCogs, color: '#9C27B0' },
+    { name: 'Circuit Design', icon: FaMicrochip, color: '#FFD700' },
+    { name: 'Embedded Systems', icon: FaBolt, color: '#FFA500' },
+    { name: 'Web Development', icon: FaCogs, color: '#9C27B0' },
+    { name: 'Video Editing', icon: FaTools, color: '#34A853' },
+    { name: 'Streamlit', icon: FaSolarPanel, color: '#4CAF50' },
+    { name: 'Git/GitHub', icon: FaCogs, color: '#6f42c1' },
   ]
 
   const containerVariants = {

@@ -89,29 +89,28 @@ const About = () => {
                 animate={inView ? { opacity: 1 } : {}}
                 transition={{ delay: 0.9, duration: 1 }}
               >
-                Abdul Mannan is an ambitious Electrical Engineering student with a deep passion for circuit analysis, 
-                electronics exploration, and practical problem-solving. As a skilled developer and 
-                lifelong learner, he continuously seeks to expand knowledge and apply it to 
-                real-world engineering challenges.
+                Motivated Electrical Engineering student at NUST, Islamabad with a strong aptitude for 
+                embedded systems, Python programming, and creative video production. Passionate about 
+                leveraging technology to design efficient hardware and software solutions, automate 
+                workflows, and deliver impactful visual content.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={inView ? { opacity: 1 } : {}}
                 transition={{ delay: 1.1, duration: 1 }}
               >
-                His engineering journey includes hands-on projects such as developing an Arduino 
-                Bluetooth-Controlled Smart Car, designing a 5V regulated power supply, creating 
-                digital logic circuits on veroboard, implementing an automatic LDR-based lighting 
-                system, and building Python desktop applications.
+                Currently enrolled in core courses including Electrical Network Analysis, Engineering Drawing, 
+                and Programming Fundamentals. Active participant in NUST technical societies and engineering 
+                competitions, consistently applying classroom concepts to hands-on lab projects and prototyping challenges.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={inView ? { opacity: 1 } : {}}
                 transition={{ delay: 1.3, duration: 1 }}
               >
-                As a Python developer and electronics enthusiast, Abdul Mannan enjoys working on projects 
-                that combine hardware and software, exploring IoT solutions, and continuously 
-                learning new technologies to stay at the forefront of electrical engineering innovation.
+                Experienced in Arduino programming (C/C++), circuit design, Python development, and web scraping. 
+                Skilled in tools like Git/GitHub, Streamlit, and Vercel for cloud deployment. Also proficient 
+                in video editing with Wondershare Filmora and CapCut.
               </motion.p>
             </motion.div>
           </motion.div>
