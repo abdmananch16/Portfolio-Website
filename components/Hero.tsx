@@ -53,10 +53,10 @@ const Hero = () => {
               transition={{ delay: 0.3 }}
               className="mb-8"
             >
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                 <motion.span
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, x: -50, rotateY: -90 }}
+                  animate={{ opacity: 1, x: 0, rotateY: 0 }}
                   transition={{ 
                     delay: 0.5, 
                     duration: 0.8,
@@ -64,16 +64,30 @@ const Hero = () => {
                     stiffness: 100
                   }}
                   whileHover={{ 
-                    scale: 1.05,
-                    textShadow: "0 0 20px rgba(255, 255, 255, 0.5)"
+                    scale: 1.1,
+                    textShadow: "0 0 30px rgba(255, 255, 255, 0.8)",
+                    rotateZ: 2
                   }}
-                  className="block"
+                  className="block inline-block"
                 >
-                  Abdul
+                  <motion.span
+                    animate={{
+                      letterSpacing: [0, 2, 0],
+                      opacity: [0.8, 1, 0.8]
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  >
+                    Abdul
+                  </motion.span>
                 </motion.span>
+                {" "}
                 <motion.span
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, x: 50, rotateY: 90 }}
+                  animate={{ opacity: 1, x: 0, rotateY: 0 }}
                   transition={{ 
                     delay: 0.7, 
                     duration: 0.8,
@@ -81,12 +95,26 @@ const Hero = () => {
                     stiffness: 100
                   }}
                   whileHover={{ 
-                    scale: 1.05,
-                    textShadow: "0 0 20px rgba(139, 92, 246, 0.8)"
+                    scale: 1.1,
+                    textShadow: "0 0 30px rgba(139, 92, 246, 1)",
+                    rotateZ: -2
                   }}
-                  className="block text-violet-500"
+                  className="block inline-block text-violet-500"
                 >
-                  Mannan
+                  <motion.span
+                    animate={{
+                      letterSpacing: [0, 2, 0],
+                      opacity: [0.8, 1, 0.8]
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 0.5
+                    }}
+                  >
+                    Mannan
+                  </motion.span>
                 </motion.span>
               </h1>
 
@@ -95,28 +123,66 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.9, duration: 0.8 }}
-                className="mt-6"
+                className="mt-4"
               >
                 <motion.p
                   animate={{
-                    opacity: [0.7, 1, 0.7],
-                    scale: [0.98, 1.02, 0.98],
+                    opacity: [0.6, 1, 0.6],
+                    scale: [0.95, 1.05, 0.95],
                     textShadow: [
-                      "0 0 10px rgba(139, 92, 246, 0)",
-                      "0 0 15px rgba(139, 92, 246, 0.5)",
-                      "0 0 10px rgba(139, 92, 246, 0)"
-                    ]
+                      "0 0 20px rgba(139, 92, 246, 0)",
+                      "0 0 25px rgba(139, 92, 246, 0.8)",
+                      "0 0 20px rgba(139, 92, 246, 0)"
+                    ],
+                    rotateZ: [-0.5, 0.5, -0.5]
                   }}
                   transition={{
-                    duration: 3,
+                    duration: 2.5,
                     repeat: Infinity,
                     ease: "easeInOut"
                   }}
-                  whileHover={{ scale: 1.05 }}
-                  className="text-2xl sm:text-3xl md:text-4xl font-semibold text-violet-400"
+                  whileHover={{ 
+                    scale: 1.15,
+                    rotateZ: 0
+                  }}
+                  className="text-xl sm:text-2xl md:text-3xl font-bold text-violet-400"
                 >
                   Python Developer
                 </motion.p>
+              </motion.div>
+
+              {/* Three Titles */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.2, duration: 1 }}
+                className="mt-6 flex flex-wrap gap-3 items-center"
+              >
+                {['Electrical Engineering Student', 'Circuit Analysis Enthusiast', 'Arduino Developer'].map((title, index) => (
+                  <motion.span
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                    animate={{ 
+                      opacity: 1, 
+                      scale: 1, 
+                      y: [0, -5, 0]
+                    }}
+                    transition={{ 
+                      delay: 1.4 + index * 0.2, 
+                      duration: 2 + index * 0.3,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      repeatDelay: 1
+                    }}
+                    whileHover={{
+                      scale: 1.1,
+                      boxShadow: "0 0 20px rgba(139, 92, 246, 0.3)"
+                    }}
+                    className="px-4 py-2 rounded-full border border-violet-400/30 text-xs sm:text-sm md:text-base text-violet-400 font-semibold"
+                  >
+                    {title}
+                  </motion.span>
+                ))}
               </motion.div>
             </motion.div>
 
